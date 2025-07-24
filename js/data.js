@@ -6,7 +6,7 @@ const portfolioData = {
     phone: "9110129748",
     email: "9801amarkumar@gmail.com",
     linkedin: "www.linkedin.com/in/amar-kumar-0b25b0171",
-    photo: "assets/profile.jpg" // Local photo
+    photo: "assets/Amar_Kumar.jpeg"
   },
   skills: [
     "React.js",
@@ -14,7 +14,9 @@ const portfolioData = {
     "Spring Boot",
     "Java",
     "JavaScript",
-    "HTML/CSS"
+    "HTML/CSS",
+    "Terraform",
+    "GCP"
   ],
   certifications: [
     "Cloud Digital Leader",
