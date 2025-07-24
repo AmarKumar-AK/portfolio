@@ -6,7 +6,7 @@ const portfolioData = {
     phone: "9110129748",
     email: "9801amarkumar@gmail.com",
     linkedin: "www.linkedin.com/in/amar-kumar-0b25b0171",
-    photo: "https://randomuser.me/api/portraits/men/32.jpg" // Temporary photo from web
+    photo: "assets/profile.jpg" // Local photo
   },
   skills: [
     "React.js",
