@@ -268,9 +268,6 @@ function populateContact() {
     document.getElementById('contact-email').textContent = portfolioData.basics.email;
     document.getElementById('contact-email').href = `mailto:${portfolioData.basics.email}`;
     
-    document.getElementById('contact-phone').textContent = portfolioData.basics.phone;
-    document.getElementById('contact-phone').href = `tel:${portfolioData.basics.phone}`;
-    
     document.getElementById('contact-location').textContent = portfolioData.basics.location;
     
     // Find LinkedIn info from socialLinks

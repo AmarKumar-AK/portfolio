@@ -580,7 +580,8 @@ footer a:hover {
 
 /* Contact Section Styling */
 #contact-section {
-    padding: 4rem 0;
+    padding: 5rem 0;
+    background-color: var(--bg-secondary);
 }
 
 .contact-container {
@@ -588,49 +589,66 @@ footer a:hover {
     justify-content: center;
     align-items: center;
     padding: 2rem 0;
+    width: 100%;
 }
 
 .contact-info-card {
-    background: var(--card-bg);
-    border-radius: var(--border-radius);
-    padding: 3rem;
-    box-shadow: var(--card-shadow);
+    background: transparent;
     width: 100%;
-    max-width: 800px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    justify-content: center;
 }
 
 .contact-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 2rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
 }
 
-.contact-item:last-child {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
+.contact-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.contact-item:hover i {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
 }
 
 .contact-item i {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--primary-color);
-    margin-right: 2rem;
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: rgba(5, 99, 187, 0.1);
     border-radius: 50%;
-    transition: background-color 0.3s ease;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-details {
+    width: 100%;
 }
 
 .contact-details h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.4rem;
+    font-weight: 600;
 }
 
 .contact-details a, .contact-details p {
@@ -638,6 +656,8 @@ footer a:hover {
     text-decoration: none;
     transition: color 0.3s ease;
     font-size: 1.1rem;
+    display: block;
+    word-break: break-word;
 }
 
 .contact-details a:hover {
@@ -648,18 +668,53 @@ footer a:hover {
     background: rgba(77, 159, 230, 0.15);
 }
 
-@media (max-width: 768px) {
+.dark-theme #contact-section {
+    background-color: var(--bg-primary);
+}
+
+.dark-theme .contact-item {
+    background: var(--card-bg);
+}
+
+.dark-theme .contact-item:hover i {
+    background: var(--primary-color);
+    color: var(--light-text);
+}
+
+@media (max-width: 992px) {
     .contact-info-card {
-        padding: 2rem;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1.5rem;
     }
     
     .contact-item {
-        flex-direction: column;
-        text-align: center;
+        padding: 2rem 1rem;
     }
     
     .contact-item i {
-        margin-right: 0;
-        margin-bottom: 1rem;
+        width: 70px;
+        height: 70px;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-info-card {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-info-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-item {
+        margin-bottom: 1.5rem;
+    }
+    
+    .contact-item:last-child {
+        margin-bottom: 0;
     }
 }
