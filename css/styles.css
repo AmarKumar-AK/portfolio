@@ -69,7 +69,7 @@ h2:after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: 0;
+    top: -10px; /* Move to the top instead of bottom */
     width: 50px;
     height: 3px;
     background: var(--primary-color);
@@ -102,9 +102,11 @@ a:hover {
 }
 
 .section {
-    padding: 5rem 0;
+    padding: 6rem 0; /* Increased top/bottom padding */
     width: 100%;
     transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative; /* For proper positioning */
+    overflow: visible; /* To ensure shadows are not cut off */
 }
 
 /* Dark theme alternating sections */
@@ -123,23 +125,35 @@ a:hover {
 
 .section-title {
     text-align: left;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem; /* Increased bottom margin to accommodate larger shadow */
+    padding-bottom: 1rem; /* Added padding for the shadow */
+    position: relative; /* For proper positioning of elements */
+    overflow: visible; /* To ensure shadow is not cut off */
 }
 
 .section-title h2 {
     display: inline-block;
     color: var(--text-primary);
     position: relative;
-    /* Enhanced text shadow for more dramatic effect */
-    text-shadow: 
-        2px 2px 0px rgba(0, 0, 0, 0.2),
-        4px 4px 8px rgba(0, 0, 0, 0.3);
+    /* Removing text-shadow as it will be created with pseudo-element */
+    text-shadow: none;
     letter-spacing: 1px;
+    padding: 0.5rem 0;
+    /* Space for the shadow effect */
+    margin-bottom: 2rem; /* More space below */
+    margin-top: 1.5rem; /* More space above for the separator line */
+    font-weight: 700; /* Make the main title bolder */
+    /* Ensure proper text wrapping */
+    white-space: normal; /* Allow wrapping in the main title, shadow will still be nowrap */
 }
 
 .section-title h2:after {
     left: 0;
     transform: none;
+    bottom: auto; /* Reset bottom property */
+    top: -15px; /* Position line at the top */
+    width: 70px; /* Make the line longer */
+    height: 4px; /* Make the line thicker */
 }
 
 /* Hero Section */
@@ -589,6 +603,11 @@ footer a:hover {
 #contact-section {
     padding: 5rem 0;
     background-color: var(--bg-secondary);
+}
+
+/* Specific style for Get In Touch title to prevent shadow line break */
+#contact-section .section-title h2 {
+    min-width: 250px; /* Ensure enough space for the title and shadow */
 }
 
 .contact-container {
