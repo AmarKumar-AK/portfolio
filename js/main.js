@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     populateSkills();
     populateProjects();
     populateCertifications();
-    populatePublications();
+    // Publications section has been removed
     populateLanguages();
     populateInterests();
     
@@ -172,29 +172,7 @@ function populateCertifications() {
     }
 }
 
-// Populate publications section
-function populatePublications() {
-    const pubContainer = document.getElementById('publications-container');
-    
-    if (portfolioData.publications && portfolioData.publications.length > 0) {
-        document.getElementById('publications-section').style.display = 'block';
-        
-        portfolioData.publications.forEach(pub => {
-            const pubItem = document.createElement('div');
-            pubItem.className = 'pub-item fade-in';
-            
-            pubItem.innerHTML = `
-                <h3>${pub.title}</h3>
-                <p><strong>Publisher:</strong> ${pub.publisher}</p>
-                <p><strong>Date:</strong> ${pub.date}</p>
-                <p>${pub.description}</p>
-                ${pub.link ? `<a href="${pub.link}" target="_blank" rel="noopener noreferrer">View Publication</a>` : ''}
-            `;
-            
-            pubContainer.appendChild(pubItem);
-        });
-    }
-}
+// Publications section has been removed
 
 // Populate languages section
 function populateLanguages() {

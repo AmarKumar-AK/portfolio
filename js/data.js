@@ -173,17 +173,7 @@ const portfolioData = {
         // Add more certification entries as needed
     ],
 
-    // Publications or Presentations Section (if applicable)
-    publications: [
-        {
-            title: "Publication Title",
-            publisher: "Publisher or Conference Name",
-            date: "Mar 2020",
-            link: "https://publication-link.com",
-            description: "Brief description of the publication and your contribution."
-        }
-        // Add more publication entries as needed
-    ],
+    // Publications section has been removed
 
     // Languages Section (if applicable)
     languages: [

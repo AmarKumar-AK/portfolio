@@ -118,16 +118,20 @@ function initThemeToggle() {
     const htmlElement = document.documentElement;
     
     if (toggle) {
+        const moonIcon = toggle.querySelector('.fa-moon');
+        const sunIcon = toggle.querySelector('.fa-sun');
+        
         toggle.addEventListener('click', () => {
             htmlElement.classList.toggle('dark-theme');
             
-            // Update icon
-            const icon = toggle.querySelector('i');
+            // Update icons
             if (htmlElement.classList.contains('dark-theme')) {
-                icon.className = 'fas fa-sun';
+                moonIcon.style.display = 'none';
+                sunIcon.style.display = 'block';
                 localStorage.setItem('theme', 'dark');
             } else {
-                icon.className = 'fas fa-moon';
+                moonIcon.style.display = 'block';
+                sunIcon.style.display = 'none';
                 localStorage.setItem('theme', 'light');
             }
         });
@@ -136,7 +140,8 @@ function initThemeToggle() {
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
             htmlElement.classList.add('dark-theme');
-            toggle.querySelector('i').className = 'fas fa-sun';
+            moonIcon.style.display = 'none';
+            sunIcon.style.display = 'block';
         }
     }
 }
