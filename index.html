@@ -27,11 +27,6 @@
 
     <!-- Scroll Indicator -->
     <div class="scroll-indicator"></div>
-
-    <!-- Theme Toggle -->
-    <div class="theme-toggle">
-        <i class="fas fa-moon"></i>
-    </div>
     
     <!-- Navigation Bar -->
     <nav class="navbar">
@@ -49,6 +44,12 @@
                 <li class="navbar-item"><a href="#skills" class="navbar-link">Skills</a></li>
                 <li class="navbar-item"><a href="#projects" class="navbar-link">Projects</a></li>
                 <li class="navbar-item"><a href="#certifications-section" class="navbar-link">Certifications</a></li>
+                <li class="navbar-item theme-toggle-item">
+                    <div class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun" style="display: none;"></i>
+                    </div>
+                </li>
             </ul>
         </div>
     </nav>
@@ -61,17 +62,12 @@
                     <div class="hero-text-area">
                         <h1 id="hero-name" class="reveal">Your Name</h1>
                         <div class="typewriter">
-                            <h2 id="hero-title" class="typewriter-text">Your Professional Title</h2>
-                        </div>
-                        <div class="contact-info hero-contact">
-                            <div id="profile-email"><i class="fas fa-envelope"></i> your.email@example.com</div>
-                            <div id="profile-phone"><i class="fas fa-phone"></i> +1 (234) 567-8901</div>
-                            <div id="profile-location"><i class="fas fa-map-marker-alt"></i> City, State, Country</div>
+                            <h2 id="hero-title"><!-- Dynamic title will be inserted here --></h2>
                         </div>
                         <div class="social-links" id="social-links">
                             <!-- Social links will be populated here -->
                         </div>
-                        <div class="summary hero-summary">
+                        <div class="summary hero-summary" style="margin-top: 2rem;">
                             <p id="profile-summary">Professional summary that highlights your key skills and career objectives. This should be a concise paragraph about your professional background and aspirations.</p>
                         </div>
                         <a href="#education" class="btn">View My Work</a>
@@ -144,18 +140,6 @@
         </div>
     </section>
 
-    <!-- Publications Section -->
-    <section class="section" id="publications-section" style="display: none;">
-        <div class="container">
-            <div class="section-title">
-                <h2>Publications & Presentations</h2>
-            </div>
-            <div class="cert-pub-grid" id="publications-container">
-                <!-- Publication items will be populated here -->
-            </div>
-        </div>
-    </section>
-
     <!-- Languages & Interests Section -->
     <section class="section" id="languages-interests-section">
         <div class="container">
@@ -173,6 +157,40 @@
                     <h2>Interests</h2>
                     <div class="interests-list" id="interests-list">
                         <!-- Interest items will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact-section">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info-card">
+                    <div class="contact-item reveal">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <a id="contact-email" href="mailto:9801amarkumar@gmail.com">9801amarkumar@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item reveal">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p id="contact-location">Bengaluru, India</p>
+                        </div>
+                    </div>
+                    <div class="contact-item reveal">
+                        <i class="fab fa-linkedin"></i>
+                        <div class="contact-details">
+                            <h3>LinkedIn</h3>
+                            <a id="contact-linkedin" href="https://www.linkedin.com/in/amar-kumar-0b25b0171" target="_blank">Amar Kumar</a>
+                        </div>
                     </div>
                 </div>
             </div>

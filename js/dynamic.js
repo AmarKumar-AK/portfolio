@@ -12,12 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1500); // Show loading for 1.5 seconds
     }
 
-    // Initialize typing animation for mobile
-    const heroTitle = document.getElementById('hero-title');
-    if (window.innerWidth <= 768) {
-        heroTitle.classList.remove('typewriter');
-        document.querySelector('.typewriter-text')?.classList.remove('typewriter-text');
-    }
+    // Mobile styling is now handled by the dynamic title function
+    // Our dynamic title works on both desktop and mobile
 
     // Initialize scroll reveal animation
     initScrollReveal();
@@ -118,16 +114,20 @@ function initThemeToggle() {
     const htmlElement = document.documentElement;
     
     if (toggle) {
+        const moonIcon = toggle.querySelector('.fa-moon');
+        const sunIcon = toggle.querySelector('.fa-sun');
+        
         toggle.addEventListener('click', () => {
             htmlElement.classList.toggle('dark-theme');
             
-            // Update icon
-            const icon = toggle.querySelector('i');
+            // Update icons
             if (htmlElement.classList.contains('dark-theme')) {
-                icon.className = 'fas fa-sun';
+                moonIcon.style.display = 'none';
+                sunIcon.style.display = 'block';
                 localStorage.setItem('theme', 'dark');
             } else {
-                icon.className = 'fas fa-moon';
+                moonIcon.style.display = 'block';
+                sunIcon.style.display = 'none';
                 localStorage.setItem('theme', 'light');
             }
         });
@@ -136,7 +136,8 @@ function initThemeToggle() {
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme === 'dark') {
             htmlElement.classList.add('dark-theme');
-            toggle.querySelector('i').className = 'fas fa-sun';
+            moonIcon.style.display = 'none';
+            sunIcon.style.display = 'block';
         }
     }
 }
@@ -202,43 +203,66 @@ function animateCounters() {
     });
 }
 
-// Add experience years counter
+// Experience years counter (disabled to remove years from hero section)
 function addExperienceCounter() {
-    // Calculate years of experience based on portfolio data
-    if (typeof portfolioData !== 'undefined' && portfolioData.experience && portfolioData.experience.length > 0) {
-        // Find earliest start date
-        let earliestDate = new Date();
+    // This function is now empty to remove the years of experience counter from the hero section
+    // If you want to re-enable it in the future, restore the original implementation
+    console.log("Experience counter has been disabled");
+}
+
+// Dynamic title typing effect
+function initDynamicTitle() {
+    const heroTitleElement = document.getElementById('hero-title');
+    if (!heroTitleElement) return;
+    
+    // Array of titles to cycle through
+    const titles = ["Software Engineer", "Problem Solver", "Learner"];
+    let currentIndex = 0;
+    let isDeleting = false;
+    let currentText = '';
+    let typingSpeed = 100; // milliseconds
+    
+    // We don't need to set a fixed width for the title element anymore
+    // since we're using absolute positioning for the cursor
+    
+    function typeTitle() {
+        const currentTitle = titles[currentIndex];
         
-        portfolioData.experience.forEach(exp => {
-            const startDate = new Date(exp.startDate);
-            if (startDate < earliestDate) {
-                earliestDate = startDate;
-            }
-        });
-        
-        // Calculate years of experience
-        const today = new Date();
-        const yearsOfExperience = Math.floor((today - earliestDate) / (365 * 24 * 60 * 60 * 1000));
-        
-        // Add counter to profile summary
-        const summaryContainer = document.querySelector('.summary');
-        if (summaryContainer && yearsOfExperience > 0) {
-            const experienceCounter = document.createElement('div');
-            experienceCounter.className = 'experience-counter';
-            experienceCounter.innerHTML = `
-                <div class="counter-item">
-                    <span class="counter" data-target="${yearsOfExperience}">0</span>
-                    <span class="counter-label">Years of Experience</span>
-                </div>
-            `;
-            
-            summaryContainer.insertBefore(experienceCounter, summaryContainer.firstChild);
-            animateCounters();
+        if (isDeleting) {
+            // When deleting text
+            currentText = currentText.substring(0, currentText.length - 1);
+            typingSpeed = 50; // Faster when deleting
+        } else {
+            // When typing text
+            currentText = currentTitle.substring(0, currentText.length + 1);
+            typingSpeed = 100; // Normal speed when typing
         }
+        
+        // Update the text content
+        heroTitleElement.textContent = currentText;
+        
+        // Logic for switching between typing and deleting
+        if (!isDeleting && currentText === currentTitle) {
+            // Complete word is typed, wait before deleting
+            isDeleting = true;
+            typingSpeed = 1500; // Pause at the end of typing
+        } else if (isDeleting && currentText === '') {
+            // Word is completely deleted, move to next word
+            isDeleting = false;
+            currentIndex = (currentIndex + 1) % titles.length;
+            typingSpeed = 500; // Pause before typing new word
+        }
+        
+        // Continue the animation loop
+        setTimeout(typeTitle, typingSpeed);
     }
+    
+    // Start the animation
+    typeTitle();
 }
 
 // Call this after portfolio data is loaded
 window.addEventListener('load', () => {
     addExperienceCounter();
+    initDynamicTitle();
 });

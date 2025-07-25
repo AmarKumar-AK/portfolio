@@ -5,12 +5,12 @@ const portfolioData = {
     // Basic Information
     basics: {
         name: "Amar Kumar",
-        title: "Full Stack Developer | Software Engineer at Publicis Sapient",
+        title: "Software Engineer",
         email: "9801amarkumar@gmail.com",
         phone: "9110129748",
-        location: "Gaya, Bihar, India",
-        profileImage: "images/profile.jpg", // Add your profile picture to the images folder
-        summary: "Experienced Full Stack Developer with over 3 years at Publicis Sapient, specializing in React.js, Redux.js, and Spring Boot. Skilled in building robust web applications and microservices. AWS Certified Cloud Practitioner with a strong background in software engineering.",
+        location: "Bengaluru, India",
+        profileImage: "images/Amar_Kumar2.png",
+        summary: "Experienced Full Stack Developer at Publicis Sapient, specializing in React.js, Redux.js, and Spring Boot. Skilled in building robust web applications and microservices. AWS Certified Cloud Practitioner with a strong background in software engineering.",
         socialLinks: [
             { platform: "LinkedIn", url: "https://www.linkedin.com/in/amar-kumar-0b25b0171", icon: "fab fa-linkedin" }
         ]
@@ -20,7 +20,7 @@ const portfolioData = {
     education: [
         {
             institution: "Indian Institute of Information Technology Design & Manufacturing Kancheepuram",
-            degree: "Bachelor's degree",
+            degree: "Bachelor & Master of Technology (Dual Degree)",
             field: "Computer Engineering",
             startDate: "2017",
             endDate: "2022",
@@ -95,7 +95,7 @@ const portfolioData = {
     skills: [
         {
             category: "Programming Languages",
-            items: ["JavaScript", "Java", "SQL", "HTML", "CSS"]
+            items: ["C++", "Python", "Java", "JavaScript", "C"]
         },
         {
             category: "Frameworks & Libraries",
@@ -103,11 +103,11 @@ const portfolioData = {
         },
         {
             category: "Cloud & DevOps",
-            items: ["AWS", "Cloud Services", "Git", "Microservices", "CI/CD"]
+            items: ["AWS", "GCP", "Git", "Terraform", "Github Action"]
         },
         {
             category: "Databases",
-            items: ["PostgreSQL", "SQL", "NoSQL", "Database Design"]
+            items: ["PostgreSQL", "MySQL", "MongoDB"]
         }
         // Add more skill categories as needed
     ],
@@ -126,14 +126,14 @@ const portfolioData = {
             description: "Full-stack e-commerce application with user authentication, product catalog, shopping cart functionality, and payment integration.",
             technologies: ["React.js", "Redux.js", "Node.js", "MongoDB"],
             link: "#",
-            image: "images/project2.jpg"
+            image: "images/project2.webp"
         },
         {
             name: "Cloud-Based Application",
             description: "Developed a cloud-native application leveraging AWS services for scalability and reliability.",
             technologies: ["AWS", "Java", "Spring Boot", "Cloud Services"],
             link: "#",
-            image: "images/project3.jpg"
+            image: "images/project3.jpeg"
         }
         // Add more project entries as needed
     ],
@@ -173,17 +173,7 @@ const portfolioData = {
         // Add more certification entries as needed
     ],
 
-    // Publications or Presentations Section (if applicable)
-    publications: [
-        {
-            title: "Publication Title",
-            publisher: "Publisher or Conference Name",
-            date: "Mar 2020",
-            link: "https://publication-link.com",
-            description: "Brief description of the publication and your contribution."
-        }
-        // Add more publication entries as needed
-    ],
+    // Publications section has been removed
 
     // Languages Section (if applicable)
     languages: [

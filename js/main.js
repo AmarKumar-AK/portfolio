@@ -8,9 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
     populateSkills();
     populateProjects();
     populateCertifications();
-    populatePublications();
+    // Publications section has been removed
     populateLanguages();
     populateInterests();
+    populateContact();
     
     // Add 'reveal' class to dynamic elements
     addRevealClasses();
@@ -26,26 +27,14 @@ function populateBasicInfo() {
     
     // Hero section
     document.getElementById('hero-name').textContent = portfolioData.basics.name;
-    document.getElementById('hero-title').textContent = portfolioData.basics.title;
+    // Don't set the text content for hero-title here, it will be handled by dynamic typing effect
+    document.getElementById('hero-title').textContent = ''; // Start empty, dynamic typing will handle it
     document.getElementById('profile-summary').textContent = portfolioData.basics.summary;
     document.getElementById('profile-image').src = portfolioData.basics.profileImage;
     
-    // Contact info
-    document.getElementById('profile-email').innerHTML = `<i class="fas fa-envelope"></i> ${portfolioData.basics.email}`;
-    document.getElementById('profile-phone').innerHTML = `<i class="fas fa-phone"></i> ${portfolioData.basics.phone}`;
-    document.getElementById('profile-location').innerHTML = `<i class="fas fa-map-marker-alt"></i> ${portfolioData.basics.location}`;
-    
-    // Social links
+    // Social links - hiding as requested
     const socialLinksContainer = document.getElementById('social-links');
-    portfolioData.basics.socialLinks.forEach(link => {
-        const socialLink = document.createElement('a');
-        socialLink.href = link.url;
-        socialLink.target = '_blank';
-        socialLink.rel = 'noopener noreferrer';
-        socialLink.innerHTML = `<i class="${link.icon}"></i>`;
-        socialLink.setAttribute('aria-label', link.platform);
-        socialLinksContainer.appendChild(socialLink);
-    });
+    socialLinksContainer.style.display = 'none';
     
     // Update footer name
     document.getElementById('footer-name').textContent = portfolioData.basics.name;
@@ -172,29 +161,7 @@ function populateCertifications() {
     }
 }
 
-// Populate publications section
-function populatePublications() {
-    const pubContainer = document.getElementById('publications-container');
-    
-    if (portfolioData.publications && portfolioData.publications.length > 0) {
-        document.getElementById('publications-section').style.display = 'block';
-        
-        portfolioData.publications.forEach(pub => {
-            const pubItem = document.createElement('div');
-            pubItem.className = 'pub-item fade-in';
-            
-            pubItem.innerHTML = `
-                <h3>${pub.title}</h3>
-                <p><strong>Publisher:</strong> ${pub.publisher}</p>
-                <p><strong>Date:</strong> ${pub.date}</p>
-                <p>${pub.description}</p>
-                ${pub.link ? `<a href="${pub.link}" target="_blank" rel="noopener noreferrer">View Publication</a>` : ''}
-            `;
-            
-            pubContainer.appendChild(pubItem);
-        });
-    }
-}
+// Publications section has been removed
 
 // Populate languages section
 function populateLanguages() {
@@ -294,4 +261,19 @@ function initializeScrollAnimation() {
         element.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
         observer.observe(element);
     });
+}
+
+// Populate contact section
+function populateContact() {
+    // Update contact information from data.js
+    document.getElementById('contact-email').textContent = portfolioData.basics.email;
+    document.getElementById('contact-email').href = `mailto:${portfolioData.basics.email}`;
+    
+    document.getElementById('contact-location').textContent = portfolioData.basics.location;
+    
+    // Find LinkedIn info from socialLinks
+    const linkedInData = portfolioData.basics.socialLinks.find(link => link.platform === "LinkedIn");
+    if (linkedInData) {
+        document.getElementById('contact-linkedin').href = linkedInData.url;
+    }
 }
