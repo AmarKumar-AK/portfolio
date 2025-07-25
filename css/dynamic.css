@@ -189,40 +189,42 @@
 }
 
 /* Typing Animation for Hero Title */
+.typewriter {
+    height: 3.5rem; /* Fixed height for typewriter container */
+    display: block;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+}
+
 .typewriter h2 {
-    overflow: hidden;
-    border-right: 0.15em solid var(--primary-color);
+    overflow: visible;
     white-space: nowrap;
-    margin: 0 auto;
+    margin: 0;
     letter-spacing: 0.05em;
     display: inline-block;
+    height: 2.5rem; /* Fixed height for the title */
+    min-width: 1ch; /* Ensures there's always at least a character width */
+    position: relative;
 }
 
-.typing {
-    animation: typing 3.5s steps(40, end);
-}
-
-.deleting {
-    animation: deleting 2s steps(40, end);
-}
-
-.blinking-cursor {
+.typewriter h2::after {
+    content: '|';
+    position: absolute;
+    right: -0.5ch;
+    color: var(--primary-color);
     animation: blink-caret 0.75s step-end infinite;
 }
 
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-}
+/* No longer using the border-right as cursor */
+/* Cursor is now handled by the ::after pseudo-element */
 
-@keyframes deleting {
-    from { width: 100% }
-    to { width: 0 }
-}
+/* We're not using width animations anymore, 
+   as they're handled by JavaScript with fixed container widths */
+/* Classes retained for JavaScript targeting */
 
 @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: var(--primary-color); }
+    from, to { opacity: 0; }
+    50% { opacity: 1; }
 }
 
 /* Floating Animation for Profile Image */

@@ -222,12 +222,15 @@ function initDynamicTitle() {
     let currentText = '';
     let typingSpeed = 100; // milliseconds
     
+    // We don't need to set a fixed width for the title element anymore
+    // since we're using absolute positioning for the cursor
+    
     function typeTitle() {
         const currentTitle = titles[currentIndex];
         
         if (isDeleting) {
             // When deleting text
-            currentText = currentTitle.substring(0, currentText.length - 1);
+            currentText = currentText.substring(0, currentText.length - 1);
             typingSpeed = 50; // Faster when deleting
         } else {
             // When typing text
@@ -237,19 +240,6 @@ function initDynamicTitle() {
         
         // Update the text content
         heroTitleElement.textContent = currentText;
-        
-        // Reset classes to ensure smooth animation
-        heroTitleElement.classList.remove('typing', 'deleting');
-        
-        // Add appropriate animation class
-        if (isDeleting) {
-            heroTitleElement.classList.add('deleting');
-        } else {
-            heroTitleElement.classList.add('typing');
-        }
-        
-        // Always keep the cursor blinking
-        heroTitleElement.classList.add('blinking-cursor');
         
         // Logic for switching between typing and deleting
         if (!isDeleting && currentText === currentTitle) {

@@ -20,7 +20,7 @@ const portfolioData = {
     education: [
         {
             institution: "Indian Institute of Information Technology Design & Manufacturing Kancheepuram",
-            degree: "Bachelor's degree",
+            degree: "Bachelor & Master of Technology (Dual Degree)",
             field: "Computer Engineering",
             startDate: "2017",
             endDate: "2022",
