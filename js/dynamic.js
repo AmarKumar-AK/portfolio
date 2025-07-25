@@ -207,40 +207,11 @@ function animateCounters() {
     });
 }
 
-// Add experience years counter
+// Experience years counter (disabled to remove years from hero section)
 function addExperienceCounter() {
-    // Calculate years of experience based on portfolio data
-    if (typeof portfolioData !== 'undefined' && portfolioData.experience && portfolioData.experience.length > 0) {
-        // Find earliest start date
-        let earliestDate = new Date();
-        
-        portfolioData.experience.forEach(exp => {
-            const startDate = new Date(exp.startDate);
-            if (startDate < earliestDate) {
-                earliestDate = startDate;
-            }
-        });
-        
-        // Calculate years of experience
-        const today = new Date();
-        const yearsOfExperience = Math.floor((today - earliestDate) / (365 * 24 * 60 * 60 * 1000));
-        
-        // Add counter to profile summary
-        const summaryContainer = document.querySelector('.summary');
-        if (summaryContainer && yearsOfExperience > 0) {
-            const experienceCounter = document.createElement('div');
-            experienceCounter.className = 'experience-counter';
-            experienceCounter.innerHTML = `
-                <div class="counter-item">
-                    <span class="counter" data-target="${yearsOfExperience}">0</span>
-                    <span class="counter-label">Years of Experience</span>
-                </div>
-            `;
-            
-            summaryContainer.insertBefore(experienceCounter, summaryContainer.firstChild);
-            animateCounters();
-        }
-    }
+    // This function is now empty to remove the years of experience counter from the hero section
+    // If you want to re-enable it in the future, restore the original implementation
+    console.log("Experience counter has been disabled");
 }
 
 // Call this after portfolio data is loaded

@@ -5,12 +5,12 @@ const portfolioData = {
     // Basic Information
     basics: {
         name: "Amar Kumar",
-        title: "Full Stack Developer | Software Engineer at Publicis Sapient",
+        title: "Software Engineer",
         email: "9801amarkumar@gmail.com",
         phone: "9110129748",
         location: "Bengaluru, India",
         profileImage: "images/Amar_Kumar2.png",
-        summary: "Experienced Full Stack Developer with over 3 years at Publicis Sapient, specializing in React.js, Redux.js, and Spring Boot. Skilled in building robust web applications and microservices. AWS Certified Cloud Practitioner with a strong background in software engineering.",
+        summary: "Experienced Full Stack Developer at Publicis Sapient, specializing in React.js, Redux.js, and Spring Boot. Skilled in building robust web applications and microservices. AWS Certified Cloud Practitioner with a strong background in software engineering.",
         socialLinks: [
             { platform: "LinkedIn", url: "https://www.linkedin.com/in/amar-kumar-0b25b0171", icon: "fab fa-linkedin" }
         ]
