@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/animations.css">
   <link rel="stylesheet" href="css/custom-links.css">
+  <link rel="stylesheet" href="css/contact-card.css">
 </head>
 <body>
   <!-- Navigation -->
@@ -50,7 +51,9 @@
         <div class="profile-info">
           <h1 id="profile-name" class="typing-text"></h1>
           <h2 id="profile-title"></h2>
-          <p id="profile-location"><i class="fas fa-map-marker-alt"></i> <span id="location-text"></span></p>
+          <div class="bio-container">
+            <p id="profile-bio" class="bio-text">Passionate software engineer with expertise in full-stack development. I build elegant solutions to complex problems using modern technologies, with a focus on creating intuitive and impactful user experiences.</p>
+          </div>
           <div class="cta-buttons">
             <a href="#contact" class="btn btn-primary">Contact Me</a>
             <a href="#experience" class="btn btn-outline">View Experience</a>
@@ -61,33 +64,7 @@
         </div>
       </div>
     </div>
-    <div class="scroll-indicator" id="scroll-down">
-      <span>Scroll Down</span>
-      <div class="mouse">
-        <div class="mouse-wheel"></div>
-      </div>
-    </div>
   </header>
-
-  <!-- Contact Section -->
-  <div class="container">
-    <div class="contact-info-banner">
-      <ul class="contact-list">
-        <li class="contact-item">
-          <i class="fas fa-envelope"></i>
-          <a id="email" href=""></a>
-        </li>
-        <li class="contact-item">
-          <i class="fas fa-phone"></i>
-          <span id="phone"></span>
-        </li>
-        <li class="contact-item">
-          <i class="fab fa-linkedin"></i>
-          <a id="linkedin" href="" target="_blank"></a>
-        </li>
-      </ul>
-    </div>
-  </div>
 
   <!-- Skills Section -->
   <section id="skills" class="skills-section section-spacing fade-in-section">
@@ -152,56 +129,50 @@
   <section id="contact" class="contact-section section-spacing fade-in-section">
     <div class="container">
       <h2 class="section-title" data-text="Contact Me">Contact Me</h2>
-      <div class="contact-container">
+      <p class="contact-subtitle">Feel free to reach out through any of these channels</p>
+      <div class="contact-container-centered">
         <div class="contact-info">
           <div class="contact-card hover-card" tabindex="0" role="button" aria-label="Send email">
             <div class="card-shine"></div>
             <i class="fas fa-envelope contact-icon"></i>
             <h3>Email</h3>
             <p id="contact-email"></p>
+            <div class="contact-action">
+              <i class="fas fa-arrow-right"></i>
+            </div>
           </div>
           <div class="contact-card hover-card" tabindex="0" role="button" aria-label="Call phone number">
             <div class="card-shine"></div>
             <i class="fas fa-phone contact-icon"></i>
             <h3>Phone</h3>
             <p id="contact-phone"></p>
+            <div class="contact-action">
+              <i class="fas fa-arrow-right"></i>
+            </div>
           </div>
           <div class="contact-card hover-card" tabindex="0" role="button" aria-label="Visit LinkedIn profile">
             <div class="card-shine"></div>
             <i class="fab fa-linkedin contact-icon"></i>
             <h3>LinkedIn</h3>
             <p id="contact-linkedin"></p>
+            <div class="contact-action">
+              <i class="fas fa-arrow-right"></i>
+            </div>
           </div>
-        </div>
-        <div class="contact-form-container">
-          <form id="contact-form" class="contact-form">
-            <h3>Send a Message</h3>
-            <div class="form-group">
-              <input type="text" id="name" placeholder="Your Name" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <input type="email" id="email" placeholder="Your Email" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <textarea id="message" placeholder="Your Message" class="form-control" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="submit-btn">
-              <span>Send Message</span>
-              <i class="fas fa-paper-plane"></i>
-            </button>
-          </form>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer Section -->
-  <footer>
+  <!-- Simple Footer -->
+  <footer class="simple-footer">
     <div class="container">
       <div class="footer-content">
-        <p>&copy; 2025 Amar Kumar. All Rights Reserved.</p>
+        <p class="copyright">&copy; 2025 Amar Kumar. All Rights Reserved.</p>
         <div class="back-to-top">
-          <a href="#home"><i class="fas fa-arrow-up"></i> Back to top</a>
+          <a href="#home" aria-label="Back to top">
+            <i class="fas fa-chevron-up"></i>
+          </a>
         </div>
       </div>
     </div>

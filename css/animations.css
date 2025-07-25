@@ -26,6 +26,15 @@
   to { transform: rotate(360deg); }
 }
 
+@keyframes subtle-glow {
+  0% {
+    box-shadow: 0 10px 20px rgba(124, 58, 237, 0.1);
+  }
+  100% {
+    box-shadow: 0 15px 30px rgba(236, 72, 153, 0.2);
+  }
+}
+
 .animate-fadeIn {
   animation: fadeIn 1s ease forwards;
   opacity: 0;

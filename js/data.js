@@ -2,10 +2,15 @@ const portfolioData = {
   personalInfo: {
     name: "Amar Kumar",
     title: "Full stack Developer | Software Engineer at Publicis Sapient",
-    location: "Gaya, Bihar, India",
+    location: "Gaya, Bihar, India", // Keeping for backward compatibility
+    bio: "Passionate software engineer with expertise in full-stack development. I build elegant solutions to complex problems using modern technologies, with a focus on creating intuitive and impactful user experiences.",
     phone: "9110129748",
     email: "9801amarkumar@gmail.com",
     linkedin: "www.linkedin.com/in/amar-kumar-0b25b0171",
+    github: "github.com/AmarKumar-AK",
+    twitter: "twitter.com/AmarKumarDev",
+    instagram: "instagram.com/amarkumar.dev",
+    medium: "medium.com/@amarkumar",
     photo: "assets/Amar_Kumar.jpeg"
   },
   skills: [
