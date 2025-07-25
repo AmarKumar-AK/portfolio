@@ -26,45 +26,56 @@ function loadPortfolioData() {
   // Load personal info
   // Note: profile-name is now handled by typing animation in animations.js
   document.getElementById('profile-title').textContent = portfolioData.personalInfo.title;
-  document.getElementById('location-text').textContent = portfolioData.personalInfo.location;
+  document.getElementById('profile-bio').textContent = portfolioData.personalInfo.bio;
   document.getElementById('profile-image').src = portfolioData.personalInfo.photo;
   
-  // Set email link and text
+  // Set contact elements if they exist in the DOM
+  // These elements have been removed from home section but might be used elsewhere
   const emailElement = document.getElementById('email');
-  emailElement.textContent = portfolioData.personalInfo.email;
-  emailElement.href = `mailto:${portfolioData.personalInfo.email}`;
+  if (emailElement) {
+    emailElement.textContent = portfolioData.personalInfo.email;
+    emailElement.href = `mailto:${portfolioData.personalInfo.email}`;
+  }
   
-  // Set phone link and text
   const phoneElement = document.getElementById('phone');
-  const phoneLink = document.createElement('a');
-  phoneLink.textContent = portfolioData.personalInfo.phone;
-  phoneLink.href = `tel:${portfolioData.personalInfo.phone}`;
-  phoneElement.innerHTML = ''; // Clear text content
-  phoneElement.appendChild(phoneLink);
+  if (phoneElement) {
+    const phoneLink = document.createElement('a');
+    phoneLink.textContent = portfolioData.personalInfo.phone;
+    phoneLink.href = `tel:${portfolioData.personalInfo.phone}`;
+    phoneElement.innerHTML = ''; // Clear text content
+    phoneElement.appendChild(phoneLink);
+  }
   
-  // Set LinkedIn link and text
   const linkedinElement = document.getElementById('linkedin');
-  linkedinElement.textContent = portfolioData.personalInfo.linkedin;
-  linkedinElement.href = `https://${portfolioData.personalInfo.linkedin}`;
+  if (linkedinElement) {
+    linkedinElement.textContent = portfolioData.personalInfo.linkedin;
+    linkedinElement.href = `https://${portfolioData.personalInfo.linkedin}`;
+  }
   
   // Load contact section data
   const contactEmail = document.getElementById('contact-email');
-  contactEmail.textContent = portfolioData.personalInfo.email;
-  contactEmail.parentElement.addEventListener('click', () => {
-    window.location.href = `mailto:${portfolioData.personalInfo.email}`;
-  });
+  if (contactEmail) {
+    contactEmail.textContent = portfolioData.personalInfo.email;
+    contactEmail.parentElement.addEventListener('click', () => {
+      window.location.href = `mailto:${portfolioData.personalInfo.email}`;
+    });
+  }
   
   const contactPhone = document.getElementById('contact-phone');
-  contactPhone.textContent = portfolioData.personalInfo.phone;
-  contactPhone.parentElement.addEventListener('click', () => {
-    window.location.href = `tel:${portfolioData.personalInfo.phone}`;
-  });
+  if (contactPhone) {
+    contactPhone.textContent = portfolioData.personalInfo.phone;
+    contactPhone.parentElement.addEventListener('click', () => {
+      window.location.href = `tel:${portfolioData.personalInfo.phone}`;
+    });
+  }
   
   const contactLinkedin = document.getElementById('contact-linkedin');
-  contactLinkedin.textContent = portfolioData.personalInfo.linkedin;
-  contactLinkedin.parentElement.addEventListener('click', () => {
-    window.open(`https://${portfolioData.personalInfo.linkedin}`, '_blank', 'noopener,noreferrer');
-  });
+  if (contactLinkedin) {
+    contactLinkedin.textContent = portfolioData.personalInfo.linkedin;
+    contactLinkedin.parentElement.addEventListener('click', () => {
+      window.open(`https://${portfolioData.personalInfo.linkedin}`, '_blank', 'noopener,noreferrer');
+    });
+  }
 
   // Load skills
   const skillsContainer = document.getElementById('skills-list');

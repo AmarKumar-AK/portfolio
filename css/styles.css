@@ -173,7 +173,9 @@ header {
   overflow: hidden;
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 0;
+  padding: 6rem 0 3rem;
 }
 
 .header-content {
@@ -191,9 +193,13 @@ header {
   overflow: hidden;
   border-radius: 20px;
   box-shadow: var(--card-shadow);
-  height: 500px;
-  width: 85%;
+  height: 450px;
+  width: 80%;
+  max-width: 450px;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .profile-image {
@@ -201,6 +207,8 @@ header {
   height: 100%;
   object-fit: cover;
   transition: transform 1.5s ease;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
 }
 
 .profile-image:hover {
@@ -247,6 +255,33 @@ header {
   margin: 1.5rem 0;
   padding-left: 1rem;
   border-left: 3px solid var(--primary-color);
+}
+
+.bio-container {
+  margin: 2rem 0;
+  position: relative;
+}
+
+.bio-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--light-color);
+  padding: 1.5rem;
+  background-color: rgba(45, 212, 191, 0.05);
+  border-radius: var(--border-radius);
+  border-left: 3px solid var(--secondary-color);
+  position: relative;
+  max-width: 100%;
+}
+
+.bio-text::before {
+  content: '"';
+  font-size: 3rem;
+  position: absolute;
+  top: -0.5rem;
+  left: 0.5rem;
+  color: var(--secondary-color);
+  opacity: 0.2;
 }
 
 .cta-buttons {
@@ -981,6 +1016,32 @@ footer::before {
 }
 
 /* Responsive design */
+@media (max-width: 992px) {
+  .header-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  
+  .profile-image-container {
+    height: 400px;
+    width: 90%;
+  }
+  
+  .profile-info h1 {
+    font-size: 2.8rem;
+  }
+  
+  .bio-text {
+    font-size: 1rem;
+    padding: 1.2rem;
+  }
+  
+  .section-spacing {
+    margin-bottom: 80px;
+    padding: 6rem 0;
+  }
+}
+
 @media (max-width: 768px) {
   .navbar-content {
     position: relative;
@@ -1062,10 +1123,26 @@ footer::before {
     padding: 1rem 0;
   }
   
+  .profile-info h1 {
+    font-size: 2.5rem;
+  }
+  
+  .profile-info h2 {
+    font-size: 1rem;
+  }
+  
+  .bio-text {
+    padding: 1.2rem;
+    font-size: 1rem;
+    margin: 1rem 0;
+  }
+  
   .profile-image-container {
     order: 0;
     margin-bottom: 2rem;
-    height: 400px;
+    height: 300px;
+    width: 300px;
+    border-radius: 20px;
   }
   
   .cta-buttons {
