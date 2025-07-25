@@ -95,7 +95,7 @@ const portfolioData = {
     skills: [
         {
             category: "Programming Languages",
-            items: ["JavaScript", "Java", "SQL", "HTML", "CSS"]
+            items: ["C++", "Python", "Java", "JavaScript", "C"]
         },
         {
             category: "Frameworks & Libraries",
@@ -103,11 +103,11 @@ const portfolioData = {
         },
         {
             category: "Cloud & DevOps",
-            items: ["AWS", "Cloud Services", "Git", "Microservices", "CI/CD"]
+            items: ["AWS", "GCP", "Git", "Terraform", "Github Action"]
         },
         {
             category: "Databases",
-            items: ["PostgreSQL", "SQL", "NoSQL", "Database Design"]
+            items: ["PostgreSQL", "MySQL", "MongoDB"]
         }
         // Add more skill categories as needed
     ],
@@ -126,14 +126,14 @@ const portfolioData = {
             description: "Full-stack e-commerce application with user authentication, product catalog, shopping cart functionality, and payment integration.",
             technologies: ["React.js", "Redux.js", "Node.js", "MongoDB"],
             link: "#",
-            image: "images/project2.jpg"
+            image: "images/project2.webp"
         },
         {
             name: "Cloud-Based Application",
             description: "Developed a cloud-native application leveraging AWS services for scalability and reliability.",
             technologies: ["AWS", "Java", "Spring Boot", "Cloud Services"],
             link: "#",
-            image: "images/project3.jpg"
+            image: "images/project3.jpeg"
         }
         // Add more project entries as needed
     ],
