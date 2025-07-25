@@ -62,6 +62,7 @@ h2 {
     position: relative;
     padding-bottom: 0.5rem;
     margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 h2:after {
@@ -121,18 +122,24 @@ a:hover {
 }
 
 .section-title {
-    text-align: center;
+    text-align: left;
     margin-bottom: 4rem;
 }
 
 .section-title h2 {
     display: inline-block;
     color: var(--text-primary);
+    position: relative;
+    /* Enhanced text shadow for more dramatic effect */
+    text-shadow: 
+        2px 2px 0px rgba(0, 0, 0, 0.2),
+        4px 4px 8px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
 }
 
 .section-title h2:after {
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    transform: none;
 }
 
 /* Hero Section */
