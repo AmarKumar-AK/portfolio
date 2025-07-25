@@ -7,6 +7,10 @@ const portfolioData = {
     phone: "9110129748",
     email: "9801amarkumar@gmail.com",
     linkedin: "www.linkedin.com/in/amar-kumar-0b25b0171",
+    github: "github.com/AmarKumar-AK",
+    twitter: "twitter.com/AmarKumarDev",
+    instagram: "instagram.com/amarkumar.dev",
+    medium: "medium.com/@amarkumar",
     photo: "assets/Amar_Kumar.jpeg"
   },
   skills: [

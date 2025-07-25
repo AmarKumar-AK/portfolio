@@ -163,3 +163,5 @@ function loadPortfolioData() {
     eduContainer.appendChild(eduEl);
   });
 }
+
+// Footer has been removed
