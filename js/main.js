@@ -30,22 +30,9 @@ function populateBasicInfo() {
     document.getElementById('profile-summary').textContent = portfolioData.basics.summary;
     document.getElementById('profile-image').src = portfolioData.basics.profileImage;
     
-    // Contact info
-    document.getElementById('profile-email').innerHTML = `<i class="fas fa-envelope"></i> ${portfolioData.basics.email}`;
-    document.getElementById('profile-phone').innerHTML = `<i class="fas fa-phone"></i> ${portfolioData.basics.phone}`;
-    document.getElementById('profile-location').innerHTML = `<i class="fas fa-map-marker-alt"></i> ${portfolioData.basics.location}`;
-    
-    // Social links
+    // Social links - hiding as requested
     const socialLinksContainer = document.getElementById('social-links');
-    portfolioData.basics.socialLinks.forEach(link => {
-        const socialLink = document.createElement('a');
-        socialLink.href = link.url;
-        socialLink.target = '_blank';
-        socialLink.rel = 'noopener noreferrer';
-        socialLink.innerHTML = `<i class="${link.icon}"></i>`;
-        socialLink.setAttribute('aria-label', link.platform);
-        socialLinksContainer.appendChild(socialLink);
-    });
+    socialLinksContainer.style.display = 'none';
     
     // Update footer name
     document.getElementById('footer-name').textContent = portfolioData.basics.name;
