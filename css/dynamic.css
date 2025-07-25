@@ -52,7 +52,7 @@
 .hero-profile-image {
     width: 100%;
     height: auto;
-    aspect-ratio: 1/1;
+    aspect-ratio: 3/4; /* Changed from 1/1 to make the image taller */
     border-radius: 20px;
     object-fit: cover;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);

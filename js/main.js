@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Publications section has been removed
     populateLanguages();
     populateInterests();
+    populateContact();
     
     // Add 'reveal' class to dynamic elements
     addRevealClasses();
@@ -259,4 +260,22 @@ function initializeScrollAnimation() {
         element.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
         observer.observe(element);
     });
+}
+
+// Populate contact section
+function populateContact() {
+    // Update contact information from data.js
+    document.getElementById('contact-email').textContent = portfolioData.basics.email;
+    document.getElementById('contact-email').href = `mailto:${portfolioData.basics.email}`;
+    
+    document.getElementById('contact-phone').textContent = portfolioData.basics.phone;
+    document.getElementById('contact-phone').href = `tel:${portfolioData.basics.phone}`;
+    
+    document.getElementById('contact-location').textContent = portfolioData.basics.location;
+    
+    // Find LinkedIn info from socialLinks
+    const linkedInData = portfolioData.basics.socialLinks.find(link => link.platform === "LinkedIn");
+    if (linkedInData) {
+        document.getElementById('contact-linkedin').href = linkedInData.url;
+    }
 }
