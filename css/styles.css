@@ -2,8 +2,8 @@
 :root {
   --primary-color: #7C3AED; /* Purple */
   --secondary-color: #2DD4BF; /* Teal */
-  --dark-color: #121212; /* Almost black */
-  --gray-dark: #1F1F1F;
+  --dark-color: #0A0A0A; /* Almost black */
+  --gray-dark: #161616;
   --gray-medium: #2D2D2D;
   --gray-light: #3D3D3D;
   --light-color: #F9FAFB;
@@ -192,7 +192,8 @@ header {
   border-radius: 20px;
   box-shadow: var(--card-shadow);
   height: 500px;
-  width: 100%;
+  width: 85%;
+  margin: 0 auto;
 }
 
 .profile-image {
@@ -329,11 +330,26 @@ header {
 
 /* Main Contact section */
 .contact-section {
-  background-color: #f1f5f9;
+  background-color: var(--dark-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(236,72,153,0.1) 0%, rgba(236,72,153,0) 70%);
+  top: -150px;
+  right: -100px;
 }
 
 .contact-container {
   margin-top: 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .contact-info {
@@ -343,28 +359,46 @@ header {
 }
 
 .contact-card {
-  background-color: white;
+  background-color: var(--gray-medium);
   padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
   text-align: center;
+  transition: var(--transition);
+  border-bottom: 3px solid transparent;
   transition: var(--transition);
 }
 
 .contact-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  border-bottom: 3px solid var(--accent-secondary);
+  background-color: var(--gray-light);
 }
 
 .contact-icon {
   font-size: 2.5rem;
-  color: var(--primary-color);
+  background: var(--text-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 1.5rem;
 }
 
 /* Section styles */
 .section-spacing {
   padding: 7rem 0;
+  position: relative;
+}
+
+.section-spacing::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1) 50%, transparent 100%);
 }
 
 .section-title {
@@ -401,7 +435,7 @@ header {
 
 /* Skills */
 .skills-section {
-  background-color: var(--gray-dark);
+  background-color: var(--dark-color);
   position: relative;
   overflow: hidden;
 }
@@ -462,8 +496,20 @@ header {
 
 /* Certifications */
 .certifications-section {
-  background-color: var(--dark-color);
+  background-color: var(--gray-dark);
   position: relative;
+  overflow: hidden;
+}
+
+.certifications-section::before {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,158,11,0.1) 0%, rgba(245,158,11,0) 70%);
+  bottom: -200px;
+  right: -150px;
 }
 
 .certifications-list {
@@ -495,8 +541,20 @@ header {
 }
 
 .experience-section {
-  background-color: var(--gray-dark);
+  background-color: var(--dark-color);
   position: relative;
+  overflow: hidden;
+}
+
+.experience-section::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124,58,237,0.1) 0%, rgba(124,58,237,0) 70%);
+  top: -150px;
+  left: -100px;
 }
 
 .experience-container {
@@ -568,9 +626,20 @@ header {
 
 /* Education */
 .education-section {
-  background-color: var(--dark-color);
+  background-color: var(--gray-dark);
   position: relative;
   overflow: hidden;
+}
+
+.education-section::before {
+  content: '';
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(45,212,191,0.1) 0%, rgba(45,212,191,0) 70%);
+  top: 50px;
+  right: -100px;
 }
 
 .education-container {
@@ -765,15 +834,28 @@ footer::before {
 }
 
 .contact-form-container {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  background-color: var(--gray-medium);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
   padding: 2rem;
 }
 
 .contact-form h3 {
   margin-bottom: 1.5rem;
-  color: var(--dark-color);
+  color: var(--light-color);
+  position: relative;
+  display: inline-block;
+}
+
+.contact-form h3::after {
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 40%;
+  background: var(--accent-secondary);
+  bottom: -8px;
+  left: 0;
+  border-radius: 2px;
 }
 
 .form-group {
@@ -783,11 +865,19 @@ footer::before {
 .form-control {
   width: 100%;
   padding: 0.8rem 1.2rem;
-  border: 1px solid #e0e0e0;
-  border-radius: 5px;
+  border: 1px solid var(--gray-light);
+  background-color: var(--gray-dark);
+  color: var(--light-color);
+  border-radius: var(--border-radius);
   font-family: var(--font-primary);
   font-size: 1rem;
   transition: var(--transition);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
 }
 
 .form-control:focus {
@@ -797,23 +887,45 @@ footer::before {
 }
 
 .submit-btn {
-  background-color: var(--primary-color);
+  background: var(--gradient-bg);
   color: white;
   border: none;
-  border-radius: 5px;
-  padding: 0.8rem 1.5rem;
+  border-radius: var(--border-radius);
+  padding: 1rem 1.8rem;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, var(--accent-color), var(--accent-secondary));
+  z-index: -1;
+  transition: opacity 0.5s ease;
+  opacity: 0;
 }
 
 .submit-btn:hover {
-  background-color: var(--accent-color);
   transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
+}
+
+.submit-btn:hover::before {
+  opacity: 1;
 }
 
 .submit-btn i {
