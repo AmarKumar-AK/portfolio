@@ -21,6 +21,15 @@ function initSectionTitleShadows() {
         // Add a class for animation purposes
         title.classList.add('shadow-effect');
     });
+    
+    // Also apply the effect to Languages and Interests section headings
+    const specialSections = document.querySelectorAll('#languages-section h2, #interests-section h2');
+    
+    specialSections.forEach(title => {
+        const titleText = title.textContent;
+        title.setAttribute('data-text', titleText);
+        title.classList.add('shadow-effect', 'special-section-title');
+    });
 
     // Add color variables for shadow effect
     addRGBVariables();

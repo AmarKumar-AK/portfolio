@@ -1,13 +1,13 @@
 /* Animations and effects for the portfolio site */
 
 /* Section title shadow effect using pseudo-elements */
-.section-title h2 {
+.section-title h2, .special-section-title {
     position: relative;
     z-index: 1;
 }
 
 /* Create the shadow text behind the title - positioned downwards and rightwards */
-.section-title h2:before {
+.section-title h2:before, .special-section-title:before {
     content: attr(data-text);
     position: absolute;
     left: 8px;  /* Move right more */
@@ -25,7 +25,7 @@
 }
 
 /* Add a different color shadow effect for dark mode */
-.dark-theme .section-title h2:before {
+.dark-theme .section-title h2:before, .dark-theme .special-section-title:before {
     color: rgba(77, 159, 230, 0.25);
     left: 10px; /* Even more offset in dark mode */
     top: 10px;
@@ -48,19 +48,19 @@
 }
 
 /* Add a more dramatic hover effect for the section titles */
-.section-title h2 {
+.section-title h2, .special-section-title {
     transition: transform 0.3s ease;
 }
 
-.section-title h2:hover {
+.section-title h2:hover, .special-section-title:hover {
     transform: translateY(-3px);
 }
 
-.section-title h2:before {
+.section-title h2:before, .special-section-title:before {
     transition: all 0.3s ease;
 }
 
-.section-title h2:hover:before {
+.section-title h2:hover:before, .special-section-title:hover:before {
     transform: scale(1.15) translateY(4px) translateX(2px);
     color: rgba(var(--primary-rgb, 5, 99, 187), 0.2); /* Slightly darker on hover */
 }
