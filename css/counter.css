@@ -1,0 +1,37 @@
+/* Experience Counter Styles */
+
+.experience-counter {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    gap: 3rem;
+}
+
+.counter-item {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.counter-item:hover {
+    transform: translateY(-5px);
+}
+
+.counter {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.counter-label {
+    font-size: 1rem;
+    color: var(--dark-color);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .experience-counter {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}

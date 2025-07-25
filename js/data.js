@@ -1,80 +1,202 @@
+// Portfolio Data Configuration File
+// Based on Amar Kumar's resume
+
 const portfolioData = {
-  personalInfo: {
-    name: "Amar Kumar",
-    title: "Full stack Developer | Software Engineer at Publicis Sapient",
-    location: "Gaya, Bihar, India",
-    phone: "9110129748",
-    email: "9801amarkumar@gmail.com",
-    linkedin: "www.linkedin.com/in/amar-kumar-0b25b0171",
-    photo: "https://randomuser.me/api/portraits/men/32.jpg" // Temporary photo from web
-  },
-  skills: [
-    "React.js",
-    "Redux.js",
-    "Spring Boot",
-    "Java",
-    "JavaScript",
-    "HTML/CSS"
-  ],
-  certifications: [
-    "Cloud Digital Leader",
-    "ADSE Java Full Stack",
-    "AWS Certified Cloud Practitioner",
-    "AWS Cloud Practitioner Essentials",
-    "SQL & PostgreSQL for Beginners: Become an SQL Expert"
-  ],
-  experience: [
-    {
-      company: "Publicis Sapient",
-      roles: [
+    // Basic Information
+    basics: {
+        name: "Amar Kumar",
+        title: "Full Stack Developer | Software Engineer at Publicis Sapient",
+        email: "9801amarkumar@gmail.com",
+        phone: "9110129748",
+        location: "Gaya, Bihar, India",
+        profileImage: "images/profile.jpg", // Add your profile picture to the images folder
+        summary: "Experienced Full Stack Developer with over 3 years at Publicis Sapient, specializing in React.js, Redux.js, and Spring Boot. Skilled in building robust web applications and microservices. AWS Certified Cloud Practitioner with a strong background in software engineering.",
+        socialLinks: [
+            { platform: "LinkedIn", url: "https://www.linkedin.com/in/amar-kumar-0b25b0171", icon: "fab fa-linkedin" }
+        ]
+    },
+
+    // Education Section
+    education: [
         {
-          title: "Associate Software development engineer 2",
-          period: "May 2024 - Present (1 year 3 months)",
-          location: "India",
-          description: ""
+            institution: "Indian Institute of Information Technology Design & Manufacturing Kancheepuram",
+            degree: "Bachelor's degree",
+            field: "Computer Engineering",
+            startDate: "2017",
+            endDate: "2022",
+            gpa: "",
+            highlights: [
+                "5-year degree program in Computer Engineering",
+                "Developed strong foundation in software development and engineering principles",
+                "Participated in technical projects and coursework relevant to full-stack development"
+            ]
+        }
+        // Add more education entries as needed
+    ],
+
+    // Work Experience Section
+    experience: [
+        {
+            company: "Publicis Sapient",
+            position: "Associate Software development engineer 2",
+            startDate: "May 2024",
+            endDate: "Present",
+            location: "India",
+            description: "Working as an Associate Software Development Engineer 2 at Publicis Sapient, a global digital transformation company.",
+            achievements: [
+                "Developing and maintaining enterprise-level web applications",
+                "Working with modern JavaScript frameworks and backend technologies",
+                "Collaborating with cross-functional teams to deliver high-quality software solutions"
+            ]
         },
         {
-          title: "Associate Software Development Engineer 1",
-          period: "April 2023 - April 2024 (1 year 1 month)",
-          location: "India",
-          description: ""
+            company: "Publicis Sapient",
+            position: "Associate Software Development Engineer 1",
+            startDate: "April 2023",
+            endDate: "April 2024",
+            location: "India",
+            description: "Worked as an Associate Software Development Engineer 1 at Publicis Sapient.",
+            achievements: [
+                "Developed and maintained web applications using React.js and Redux",
+                "Implemented RESTful APIs using Spring Boot",
+                "Collaborated on agile software development projects"
+            ]
         },
         {
-          title: "Trainee engineer",
-          period: "June 2022 - March 2023 (10 months)",
-          location: "India",
-          description: ""
-        }
-      ]
-    },
-    {
-      company: "Glabbr Technologies Private Limited",
-      roles: [
+            company: "Publicis Sapient",
+            position: "Trainee engineer",
+            startDate: "June 2022",
+            endDate: "March 2023",
+            location: "India",
+            description: "Started career at Publicis Sapient as a Trainee Engineer after graduation.",
+            achievements: [
+                "Underwent comprehensive training in full-stack development technologies",
+                "Participated in hands-on projects and contributed to production code",
+                "Acquired proficiency in React.js, Redux, and Spring Boot frameworks"
+            ]
+        },
         {
-          title: "Software Engineer",
-          period: "June 2021 - December 2021 (7 months)",
-          location: "Maharashtra, India",
-          description: "I worked on a microservice called Document Management System where I wrote different APIs for opening, copying, moving, deleting documents and many more."
+            company: "Glabbr Technologies Private Limited",
+            position: "Software Engineer",
+            startDate: "June 2021",
+            endDate: "December 2021",
+            location: "Maharashtra, India",
+            description: "Worked on microservice architecture and document management systems.",
+            achievements: [
+                "Developed a Document Management System microservice",
+                "Wrote APIs for document operations including opening, copying, moving, and deleting",
+                "Implemented backend functionalities for document handling and processing"
+            ]
         }
-      ]
-    },
-    {
-      company: "Indian Institute of Information Technology Design & Manufacturing Kancheepuram",
-      roles: [
+        // Add more experience entries as needed
+    ],
+
+    // Skills Section
+    skills: [
         {
-          title: "Student",
-          period: "August 2017 - July 2022 (5 years)",
-          location: "Chennai, Tamil Nadu, India",
-          description: ""
+            category: "Programming Languages",
+            items: ["JavaScript", "Java", "SQL", "HTML", "CSS"]
+        },
+        {
+            category: "Frameworks & Libraries",
+            items: ["React.js", "Redux.js", "Spring Boot", "Node.js", "Bootstrap"]
+        },
+        {
+            category: "Cloud & DevOps",
+            items: ["AWS", "Cloud Services", "Git", "Microservices", "CI/CD"]
+        },
+        {
+            category: "Databases",
+            items: ["PostgreSQL", "SQL", "NoSQL", "Database Design"]
         }
-      ]
-    }
-  ],
-  education: [
-    {
-      institution: "Indian Institute of Information Technology Design & Manufacturing Kancheepuram",
-      degree: "Bachelor's degree, Computer Engineering",
-      period: "2017 - 2022"
-    }
-  ]
+        // Add more skill categories as needed
+    ],
+
+    // Projects Section
+    projects: [
+        {
+            name: "Document Management System",
+            description: "Microservice-based document management system developed at Glabbr Technologies. Implemented APIs for document operations including opening, copying, moving, and deleting files.",
+            technologies: ["Java", "Spring Boot", "Microservices", "RESTful APIs"],
+            link: "#",
+            image: "images/project1.jpg" // Add project screenshots to the images folder
+        },
+        {
+            name: "E-commerce Platform",
+            description: "Full-stack e-commerce application with user authentication, product catalog, shopping cart functionality, and payment integration.",
+            technologies: ["React.js", "Redux.js", "Node.js", "MongoDB"],
+            link: "#",
+            image: "images/project2.jpg"
+        },
+        {
+            name: "Cloud-Based Application",
+            description: "Developed a cloud-native application leveraging AWS services for scalability and reliability.",
+            technologies: ["AWS", "Java", "Spring Boot", "Cloud Services"],
+            link: "#",
+            image: "images/project3.jpg"
+        }
+        // Add more project entries as needed
+    ],
+
+    // Certifications Section
+    certifications: [
+        {
+            name: "Cloud Digital Leader",
+            issuer: "Google",
+            date: "2023",
+            link: "#"
+        },
+        {
+            name: "ADSE Java Full Stack",
+            issuer: "Publicis Sapient",
+            date: "2022",
+            link: "#"
+        },
+        {
+            name: "AWS Certified Cloud Practitioner",
+            issuer: "Amazon Web Services",
+            date: "2023",
+            link: "#"
+        },
+        {
+            name: "AWS Cloud Practitioner Essentials",
+            issuer: "Amazon Web Services",
+            date: "2022",
+            link: "#"
+        },
+        {
+            name: "SQL & PostgreSQL for Beginners: Become an SQL Expert",
+            issuer: "Udemy",
+            date: "2022",
+            link: "#"
+        }
+        // Add more certification entries as needed
+    ],
+
+    // Publications or Presentations Section (if applicable)
+    publications: [
+        {
+            title: "Publication Title",
+            publisher: "Publisher or Conference Name",
+            date: "Mar 2020",
+            link: "https://publication-link.com",
+            description: "Brief description of the publication and your contribution."
+        }
+        // Add more publication entries as needed
+    ],
+
+    // Languages Section (if applicable)
+    languages: [
+        { name: "English", proficiency: "Professional" },
+        { name: "Hindi", proficiency: "Native" }
+        // Add more language entries as needed
+    ],
+
+    // Interests Section
+    interests: [
+        "Cloud Architecture and Serverless Computing",
+        "Web Application Development",
+        "Software Engineering Best Practices",
+        "Microservice Architecture"
+    ]
 };
