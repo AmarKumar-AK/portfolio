@@ -195,12 +195,29 @@
     white-space: nowrap;
     margin: 0 auto;
     letter-spacing: 0.05em;
-    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+    display: inline-block;
+}
+
+.typing {
+    animation: typing 3.5s steps(40, end);
+}
+
+.deleting {
+    animation: deleting 2s steps(40, end);
+}
+
+.blinking-cursor {
+    animation: blink-caret 0.75s step-end infinite;
 }
 
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
+}
+
+@keyframes deleting {
+    from { width: 100% }
+    to { width: 0 }
 }
 
 @keyframes blink-caret {

@@ -27,7 +27,8 @@ function populateBasicInfo() {
     
     // Hero section
     document.getElementById('hero-name').textContent = portfolioData.basics.name;
-    document.getElementById('hero-title').textContent = portfolioData.basics.title;
+    // Don't set the text content for hero-title here, it will be handled by dynamic typing effect
+    document.getElementById('hero-title').textContent = ''; // Start empty, dynamic typing will handle it
     document.getElementById('profile-summary').textContent = portfolioData.basics.summary;
     document.getElementById('profile-image').src = portfolioData.basics.profileImage;
     

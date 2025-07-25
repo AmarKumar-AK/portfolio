@@ -12,12 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1500); // Show loading for 1.5 seconds
     }
 
-    // Initialize typing animation for mobile
-    const heroTitle = document.getElementById('hero-title');
-    if (window.innerWidth <= 768) {
-        heroTitle.classList.remove('typewriter');
-        document.querySelector('.typewriter-text')?.classList.remove('typewriter-text');
-    }
+    // Mobile styling is now handled by the dynamic title function
+    // Our dynamic title works on both desktop and mobile
 
     // Initialize scroll reveal animation
     initScrollReveal();
@@ -214,7 +210,69 @@ function addExperienceCounter() {
     console.log("Experience counter has been disabled");
 }
 
+// Dynamic title typing effect
+function initDynamicTitle() {
+    const heroTitleElement = document.getElementById('hero-title');
+    if (!heroTitleElement) return;
+    
+    // Array of titles to cycle through
+    const titles = ["Software Engineer", "Problem Solver", "Learner"];
+    let currentIndex = 0;
+    let isDeleting = false;
+    let currentText = '';
+    let typingSpeed = 100; // milliseconds
+    
+    function typeTitle() {
+        const currentTitle = titles[currentIndex];
+        
+        if (isDeleting) {
+            // When deleting text
+            currentText = currentTitle.substring(0, currentText.length - 1);
+            typingSpeed = 50; // Faster when deleting
+        } else {
+            // When typing text
+            currentText = currentTitle.substring(0, currentText.length + 1);
+            typingSpeed = 100; // Normal speed when typing
+        }
+        
+        // Update the text content
+        heroTitleElement.textContent = currentText;
+        
+        // Reset classes to ensure smooth animation
+        heroTitleElement.classList.remove('typing', 'deleting');
+        
+        // Add appropriate animation class
+        if (isDeleting) {
+            heroTitleElement.classList.add('deleting');
+        } else {
+            heroTitleElement.classList.add('typing');
+        }
+        
+        // Always keep the cursor blinking
+        heroTitleElement.classList.add('blinking-cursor');
+        
+        // Logic for switching between typing and deleting
+        if (!isDeleting && currentText === currentTitle) {
+            // Complete word is typed, wait before deleting
+            isDeleting = true;
+            typingSpeed = 1500; // Pause at the end of typing
+        } else if (isDeleting && currentText === '') {
+            // Word is completely deleted, move to next word
+            isDeleting = false;
+            currentIndex = (currentIndex + 1) % titles.length;
+            typingSpeed = 500; // Pause before typing new word
+        }
+        
+        // Continue the animation loop
+        setTimeout(typeTitle, typingSpeed);
+    }
+    
+    // Start the animation
+    typeTitle();
+}
+
 // Call this after portfolio data is loaded
 window.addEventListener('load', () => {
     addExperienceCounter();
+    initDynamicTitle();
 });
