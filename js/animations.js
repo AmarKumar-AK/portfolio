@@ -15,6 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
         profileName.innerHTML += text.charAt(i);
         i++;
         setTimeout(type, speed);
+      } else {
+        // Remove typing cursor by removing the typing-text class after a short delay
+        setTimeout(() => {
+          profileName.classList.remove('typing-text');
+        }, 500); // Wait half a second after typing is complete before removing cursor
       }
     }
     
