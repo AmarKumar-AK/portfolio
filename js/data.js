@@ -119,7 +119,7 @@ const portfolioData = {
             description: "Microservice-based document management system developed at Glabbr Technologies. Implemented APIs for document operations including opening, copying, moving, and deleting files.",
             technologies: ["Java", "Spring Boot", "Microservices", "RESTful APIs"],
             link: "#",
-            image: "images/project1.jpg" // Add project screenshots to the images folder
+            image: "images/project11.jpg" // Add project screenshots to the images folder
         },
         {
             name: "E-commerce Platform",
