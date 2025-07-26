@@ -30,6 +30,18 @@ const portfolioData = {
                 "Developed strong foundation in software development and engineering principles",
                 "Participated in technical projects and coursework relevant to full-stack development"
             ]
+        },
+        {
+            institution: "Gaya College, Gaya",
+            degree: "12th Grade (Senior Secondary)",
+            field: "Physics, Chemistry, Mathematics (PCM)",
+            startDate: "2015",
+            endDate: "2017",
+            gpa: "",
+            highlights: [
+                "Completed 12th grade with a focus on PCM subjects",
+                "Built a strong foundation in science and mathematics"
+            ]
         }
         // Add more education entries as needed
     ],
