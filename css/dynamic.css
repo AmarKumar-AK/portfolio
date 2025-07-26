@@ -38,6 +38,7 @@
 .hero-text-area {
     flex: 1;
     max-width: 60%;
+    text-align: left; /* Explicitly set left alignment for hero text content */
 }
 
 .hero-profile-image-container {
@@ -121,6 +122,11 @@
     opacity: 0.9;
     max-width: 600px;
     line-height: 1.8;
+    text-align: left;
+}
+
+.hero-summary p {
+    text-align: left;
 }
 
 .hero .social-links {
@@ -132,7 +138,7 @@
 @media (max-width: 992px) {
     .hero-content-combined {
         flex-direction: column-reverse;
-        text-align: center;
+        /* Maintaining left alignment as per user request */
     }
     
     .hero-text-area {
@@ -194,6 +200,7 @@
     display: block;
     margin-bottom: 1rem;
     margin-top: 0.5rem;
+    text-align: left; /* Ensure the container itself is left-aligned */
 }
 
 .typewriter h2 {
@@ -205,6 +212,7 @@
     height: 2.5rem; /* Fixed height for the title */
     min-width: 1ch; /* Ensures there's always at least a character width */
     position: relative;
+    text-align: left;
 }
 
 .typewriter h2::after {

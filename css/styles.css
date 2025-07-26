@@ -165,7 +165,7 @@ a:hover {
     color: var(--light-text);
     display: flex;
     align-items: center;
-    text-align: center;
+    /* Removed text-align: center to allow child elements to control their own alignment */
 }
 
 .hero-content {
@@ -176,12 +176,14 @@ a:hover {
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
+    text-align: left;
 }
 
 .hero h2 {
     font-size: 2rem;
     font-weight: 400;
     margin-bottom: 2rem;
+    text-align: left;
 }
 
 .hero h2:after {
