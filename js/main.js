@@ -122,15 +122,22 @@ function populateProjects() {
         
         const techTags = project.technologies.map(tech => `<span class="project-tech-tag">${tech}</span>`).join('');
         
+        // Truncate description to 150 characters and add ellipsis if needed
+        const truncatedDescription = project.description.length > 150 
+            ? project.description.substring(0, 150) + '...' 
+            : project.description;
+        
         projectCard.innerHTML = `
             <img src="${project.image}" alt="${project.name}" class="project-image">
             <div class="project-content">
                 <h3>${project.name}</h3>
-                <p>${project.description}</p>
+                <p>${truncatedDescription}</p>
                 <div class="project-technologies">
                     ${techTags}
                 </div>
-                <a href="${project.link}" class="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                <div class="project-link-wrapper">
+                    <a href="${project.link}" class="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                </div>
             </div>
         `;
         
