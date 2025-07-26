@@ -302,7 +302,8 @@ a:hover {
 /* Experience Section */
 .experience-company {
     font-weight: bold;
-    color: var(--dark-color);
+    color: var(--text-primary); /* Use text-primary instead of dark-color to respect theme */
+    transition: color 0.3s ease; /* Add transition for smooth color change */
 }
 
 /* Skills Section */
