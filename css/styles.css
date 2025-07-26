@@ -125,7 +125,7 @@ a:hover {
 
 .section-title {
     text-align: left;
-    margin-bottom: 6rem; /* Increased bottom margin to accommodate larger shadow */
+    margin-bottom: 1.2rem; /* Reduced bottom margin */
     padding-bottom: 1rem; /* Added padding for the shadow */
     position: relative; /* For proper positioning of elements */
     overflow: visible; /* To ensure shadow is not cut off */
@@ -140,7 +140,7 @@ a:hover {
     letter-spacing: 1px;
     padding: 0.5rem 0;
     /* Space for the shadow effect */
-    margin-bottom: 2rem; /* More space below */
+    margin-bottom: 0.2em; /* Reduced space below */
     margin-top: 1.5rem; /* More space above for the separator line */
     font-weight: 700; /* Make the main title bolder */
     /* Ensure proper text wrapping */
