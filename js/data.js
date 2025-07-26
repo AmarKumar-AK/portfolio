@@ -128,7 +128,7 @@ const portfolioData = {
     projects: [
         {
             name: "Document Management System",
-            description: "Microservice-based document management system developed at Glabbr Technologies. Implemented APIs for document operations including opening, copying, moving, and deleting files.",
+            description: "Microservice-based document management system developed at Glabbr Technologies. Implemented APIs for document operations including opening, copying, moving, and deleting files. Microservice-based document management system developed at Glabbr Technologies. Implemented APIs for document operations including opening, copying, moving, and deleting files. Microservice-based document management system developed at Glabbr Technologies. Implemented APIs for document operations including opening, copying, moving, and deleting files.",
             technologies: ["Java", "Spring Boot", "Microservices", "RESTful APIs"],
             link: "#",
             image: "images/project11.jpg" // Add project screenshots to the images folder
