@@ -387,6 +387,9 @@ a:hover {
     overflow: hidden;
     box-shadow: var(--card-shadow);
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .project-card:hover {
@@ -402,6 +405,14 @@ a:hover {
 
 .project-content {
     padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-link-wrapper {
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 .project-technologies {

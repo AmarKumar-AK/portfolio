@@ -135,7 +135,9 @@ function populateProjects() {
                 <div class="project-technologies">
                     ${techTags}
                 </div>
-                <a href="${project.link}" class="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                <div class="project-link-wrapper">
+                    <a href="${project.link}" class="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
+                </div>
             </div>
         `;
         
