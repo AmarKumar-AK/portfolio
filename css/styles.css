@@ -365,12 +365,32 @@ a:hover {
     padding: 2rem;
     margin-bottom: 2rem;
     box-shadow: var(--box-shadow);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.company-experience:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+    z-index: 1;
 }
 
 .company-experience:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.company-experience:hover:before {
+    transform: translateY(0);
 }
 
 .company-header {
@@ -408,6 +428,35 @@ a:hover {
     border-left: 3px solid var(--primary-color);
     background: rgba(0,0,0,0.02);
     border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.role-item:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(var(--primary-color-rgb), 0.05), transparent);
+    transition: width 0.5s ease;
+    z-index: 0;
+}
+
+.role-item:hover {
+    transform: translateX(5px);
+    background: rgba(var(--primary-color-rgb), 0.02);
+}
+
+.role-item:hover:after {
+    width: 100%;
+}
+
+.role-item > * {
+    position: relative;
+    z-index: 1;
 }
 
 .role-title {
@@ -415,12 +464,24 @@ a:hover {
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: var(--text-primary);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.role-item:hover .role-title {
+    color: var(--primary-color);
+    transform: translateX(3px);
 }
 
 .role-date {
     font-size: 0.9rem;
     color: var(--primary-color);
     margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.role-item:hover .role-date {
+    transform: translateX(3px);
 }
 
 .role-description {
@@ -553,7 +614,7 @@ a:hover {
 .project-name {
     font-size: 1.25rem;
     font-weight: 600;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     color: var(--text-primary);
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -562,6 +623,27 @@ a:hover {
     overflow: hidden;
     text-overflow: ellipsis;
     height: 3em;
+}
+
+.project-date {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.project-date:before {
+    content: '\f073';
+    font-family: 'Font Awesome 5 Free';
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.project-card:hover .project-date {
+    transform: translateX(5px);
 }
 
 .project-description {
@@ -624,10 +706,75 @@ a:hover {
 }
 
 .cert-item, .pub-item {
-    background: white;
+    background: var(--card-bg);
     padding: 1.5rem;
     border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
+    box-shadow: var(--card-shadow);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    z-index: 1;
+    border-left: 3px solid transparent;
+}
+
+.cert-item:before, .pub-item:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.4s ease;
+    border-radius: var(--border-radius);
+}
+
+.cert-item:hover, .pub-item:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border-left: 3px solid var(--primary-color);
+}
+
+.cert-item:hover:before, .pub-item:hover:before {
+    opacity: 0.05;
+}
+
+.cert-item h3, .pub-item h3 {
+    transition: transform 0.3s ease;
+}
+
+.cert-item:hover h3, .pub-item:hover h3 {
+    transform: translateX(5px);
+    color: var(--primary-color);
+}
+
+.cert-item a, .pub-item a {
+    position: relative;
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.3rem 0;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.cert-item a:before, .pub-item a:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.cert-item a:hover, .pub-item a:hover {
+    transform: translateY(-2px);
+}
+
+.cert-item a:hover:before, .pub-item a:hover:before {
+    width: 100%;
 }
 
 /* Languages & Interests */
@@ -857,6 +1004,18 @@ footer a:hover {
 
 .dark-theme .role-item {
     background: rgba(255,255,255,0.05);
+}
+
+.dark-theme .role-item:hover {
+    background: rgba(var(--primary-color-rgb), 0.1);
+}
+
+.dark-theme .role-item:after {
+    background: linear-gradient(90deg, rgba(var(--primary-color-rgb), 0.1), transparent);
+}
+
+.dark-theme .cert-item, .dark-theme .pub-item {
+    background: var(--card-bg);
 }
 
 .dark-theme h2:after {

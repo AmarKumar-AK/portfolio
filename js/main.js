@@ -155,6 +155,7 @@ function populateProjects() {
                 </div>
                 <div class="project-info">
                     <h3 class="project-name">${project.name}</h3>
+                    <div class="project-date">${project.startDate} - ${project.endDate}</div>
                     <p class="project-description">${description}</p>
                     <a href="${project.url}" target="_blank" class="project-link">View Project</a>
                 </div>

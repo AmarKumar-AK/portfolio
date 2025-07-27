@@ -136,18 +136,24 @@ const portfolioData = {
             name: "Personal Portfolio Website",
             description: "A responsive portfolio website built with HTML, CSS, and JavaScript to showcase skills, projects, and professional experience.",
             image: "images/project11.jpg",
-            url: "https://github.com/AmarKumar-AK/portfolio"
+            url: "https://github.com/AmarKumar-AK/portfolio",
+            startDate: "January 2025",
+            endDate: "Present"
         },
         {
             name: "E-commerce Web Application",
-            description: "Full-stack e-commerce platform with product catalog, shopping cart, and secure payment integration using React and Node.js.",
+            description: "Full-stack e-commerce platform with product catalog, shopping cart, and secure payment integration using React and Node.js. ",
             image: "images/project2.webp",
-            url: "https://github.com/AmarKumar-AK/ecommerce-app"
+            url: "https://github.com/AmarKumar-AK/ecommerce-app",
+            startDate: "August 2024",
+            endDate: "December 2024"
         },
         {
             name: "Task Management System",
             description: "A comprehensive task management application with user authentication, task assignment, and progress tracking functionality.",
             image: "images/project3.jpeg",
+            startDate: "March 2024",
+            endDate: "July 2024",
             url: "https://github.com/AmarKumar-AK/task-manager"
         }
     ],
