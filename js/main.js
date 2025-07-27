@@ -298,4 +298,18 @@ function populateContact() {
     if (linkedInData) {
         document.getElementById('contact-linkedin').href = linkedInData.url;
     }
+    
+    // Populate social icons
+    const socialIconsContainer = document.getElementById('contact-social-icons');
+    
+    portfolioData.basics.socialLinks.forEach(social => {
+        const socialLink = document.createElement('a');
+        socialLink.href = social.url;
+        socialLink.target = "_blank";
+        socialLink.rel = "noopener noreferrer";
+        socialLink.setAttribute('aria-label', `Follow me on ${social.platform}`);
+        socialLink.innerHTML = `<i class="${social.icon}"></i>`;
+        
+        socialIconsContainer.appendChild(socialLink);
+    });
 }

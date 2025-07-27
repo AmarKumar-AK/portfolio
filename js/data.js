@@ -12,7 +12,11 @@ const portfolioData = {
         profileImage: "images/Amar_Kumar2.png",
         summary: "Experienced Full Stack Developer at Publicis Sapient, specializing in React.js, Redux.js, and Spring Boot. Skilled in building robust web applications and microservices. AWS Certified Cloud Practitioner with a strong background in software engineering.",
         socialLinks: [
-            { platform: "LinkedIn", url: "https://www.linkedin.com/in/amar-kumar-0b25b0171", icon: "fab fa-linkedin" }
+            { platform: "LinkedIn", url: "https://www.linkedin.com/in/amar-kumar-0b25b0171", icon: "fab fa-linkedin" },
+            { platform: "Twitter", url: "https://x.com/AmarkrArya", icon: "fab fa-twitter" },
+            { platform: "Instagram", url: "https://instagram.com/", icon: "fab fa-instagram" },
+            { platform: "GitHub", url: "https://github.com/AmarKumar-AK", icon: "fab fa-github" },
+            { platform: "Discord", url: "https://discord.com/", icon: "fab fa-discord" }
         ]
     },
 
