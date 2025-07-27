@@ -2,7 +2,9 @@
 /* Main Styles for Portfolio Website */
 :root {
     --primary-color: #0563bb;
+    --primary-color-rgb: 5, 99, 187; /* RGB values of primary color */
     --secondary-color: #3498db;
+    --secondary-color-rgb: 52, 152, 219; /* RGB values of secondary color */
     --dark-color: #2c3e50;
     --light-color: #ecf0f1;
     --text-color: #333;
@@ -487,22 +489,53 @@ a:hover {
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--card-shadow);
-    transition: var(--transition);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     height: 100%;
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.project-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, var(--primary-color), var(--secondary-color));
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.4s ease;
+    border-radius: var(--border-radius);
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-7px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.project-card:hover:before {
+    opacity: 0.1;
+}
+
+.project-image-container {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
 }
 
 .project-image {
     width: 100%;
-    height: 200px;
+    height: 100%;
     object-fit: cover;
     border-bottom: 1px solid var(--border-color);
+    transition: transform 0.8s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.1);
 }
 
 .project-info {
@@ -510,6 +543,11 @@ a:hover {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-info {
+    transform: translateY(-5px);
 }
 
 .project-name {
@@ -540,20 +578,42 @@ a:hover {
 
 .project-link {
     display: inline-block;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 1.2rem;
     background-color: var(--primary-color);
     color: white;
-    border-radius: var(--border-radius);
+    border-radius: 50px;
     font-weight: 500;
-    transition: var(--transition);
+    transition: all 0.3s ease;
     text-align: center;
     align-self: flex-start;
     margin-top: auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: 1px solid transparent;
+}
+
+.project-link:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: white;
+    z-index: -1;
+    transition: width 0.3s ease;
 }
 
 .project-link:hover {
-    background-color: var(--secondary-color);
-    color: white;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(var(--primary-color-rgb, 5, 99, 187), 0.3);
+}
+
+.project-link:hover:before {
+    width: 100%;
 }
 
 /* Certifications & Publications */

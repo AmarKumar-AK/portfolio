@@ -150,7 +150,9 @@ function populateProjects() {
             }
             
             projectCard.innerHTML = `
-                <img src="${project.image}" alt="${project.name}" class="project-image">
+                <div class="project-image-container">
+                    <img src="${project.image}" alt="${project.name}" class="project-image">
+                </div>
                 <div class="project-info">
                     <h3 class="project-name">${project.name}</h3>
                     <p class="project-description">${description}</p>
