@@ -69,25 +69,9 @@ function initScrollIndicator() {
     }
 }
 
-// Skill progress bars
+// Skill progress bars - removed as per request
 function initSkillProgressBars() {
-    const skillItems = document.querySelectorAll('.skill-item');
-    
-    // Add progress bars to skill items
-    skillItems.forEach(item => {
-        const container = document.createElement('div');
-        container.className = 'skill-progress-container';
-        
-        const progressBar = document.createElement('div');
-        progressBar.className = 'skill-progress';
-        
-        // Set random progress between 70% and 95% for demo
-        const progress = Math.floor(Math.random() * 25) + 70;
-        progressBar.setAttribute('data-progress', progress + '%');
-        
-        container.appendChild(progressBar);
-        item.appendChild(container);
-    });
+    // Function disabled - no longer adding progress bars to skill items
     
     // Animate progress bars when they come into view
     const animateProgressBars = () => {
@@ -142,9 +126,9 @@ function initThemeToggle() {
     }
 }
 
-// Tilt effect for certifications and project cards
+// Tilt effect for certifications
 function initTiltEffect() {
-    const tiltElements = document.querySelectorAll('.cert-item, .pub-item, .project-card');
+    const tiltElements = document.querySelectorAll('.cert-item, .pub-item');
     
     tiltElements.forEach(element => {
         element.addEventListener('mousemove', e => {

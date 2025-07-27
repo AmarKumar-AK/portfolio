@@ -43,8 +43,8 @@
                 <li class="navbar-item"><a href="#home" class="navbar-link active">Home</a></li>
                 <li class="navbar-item"><a href="#education" class="navbar-link">Education</a></li>
                 <li class="navbar-item"><a href="#experience" class="navbar-link">Experience</a></li>
-                <li class="navbar-item"><a href="#skills" class="navbar-link">Skills</a></li>
                 <li class="navbar-item"><a href="#projects" class="navbar-link">Projects</a></li>
+                <li class="navbar-item"><a href="#skills" class="navbar-link">Skills</a></li>
                 <li class="navbar-item"><a href="#certifications-section" class="navbar-link">Certifications</a></li>
                 <li class="navbar-item theme-toggle-item">
                     <div class="theme-toggle">
@@ -72,8 +72,10 @@
                         <div class="summary hero-summary" style="margin-top: 2rem;">
                             <p id="profile-summary">Professional summary that highlights your key skills and career objectives. This should be a concise paragraph about your professional background and aspirations.</p>
                         </div>
-                        <a href="#projects" class="btn">View My Work</a>
-                        <a href="#contact-section" class="btn btn-secondary" style="margin-left: 1rem;">Get in Touch</a>
+                        <div class="hero-buttons">
+                            <a href="#projects" class="btn primary-btn">View My Work</a>
+                            <a href="#contact-section" class="btn secondary-btn">Get in Touch</a>
+                        </div>
                     </div>
                     <div class="hero-profile-image-container">
                         <img id="profile-image" src="images/profile.jpg" alt="Profile Image" class="hero-profile-image">
@@ -107,6 +109,19 @@
         </div>
     </section>
 
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Projects</h2>
+                <p class="section-caption">Some of my recent work</p>
+            </div>
+            <div class="projects-grid" id="projects-container">
+                <!-- Project cards will be populated here -->
+            </div>
+        </div>
+    </section>
+
     <!-- Skills Section -->
     <section class="section" id="skills">
         <div class="container">
@@ -116,19 +131,6 @@
             </div>
             <div class="skills-container" id="skills-container">
                 <!-- Skill categories will be populated here -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="section" id="projects">
-        <div class="container">
-            <div class="section-title reveal">
-                <h2>Projects</h2>
-                <p class="section-caption">A selection of my recent work</p>
-            </div>
-            <div class="projects-grid" id="projects-grid">
-                <!-- Project cards will be populated here -->
             </div>
         </div>
     </section>

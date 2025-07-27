@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     populateBasicInfo();
     populateEducation();
     populateExperience();
-    populateSkills();
     populateProjects();
+    populateSkills();
     populateCertifications();
     // Publications section has been removed
     populateLanguages();
@@ -114,35 +114,31 @@ function populateSkills() {
 
 // Populate projects section
 function populateProjects() {
-    const projectsGrid = document.getElementById('projects-grid');
+    const projectsContainer = document.getElementById('projects-container');
     
-    portfolioData.projects.forEach(project => {
-        const projectCard = document.createElement('div');
-        projectCard.className = 'project-card fade-in';
-        
-        const techTags = project.technologies.map(tech => `<span class="project-tech-tag">${tech}</span>`).join('');
-        
-        // Truncate description to 150 characters and add ellipsis if needed
-        const truncatedDescription = project.description.length > 150 
-            ? project.description.substring(0, 150) + '...' 
-            : project.description;
-        
-        projectCard.innerHTML = `
-            <img src="${project.image}" alt="${project.name}" class="project-image">
-            <div class="project-content">
-                <h3>${project.name}</h3>
-                <p>${truncatedDescription}</p>
-                <div class="project-technologies">
-                    ${techTags}
+    if (portfolioData.projects && portfolioData.projects.length > 0) {
+        portfolioData.projects.forEach(project => {
+            const projectCard = document.createElement('div');
+            projectCard.className = 'project-card fade-in';
+            
+            // Truncate description if it's longer than 150 characters
+            let description = project.description;
+            if (description.length > 150) {
+                description = description.substring(0, 150) + '...';
+            }
+            
+            projectCard.innerHTML = `
+                <img src="${project.image}" alt="${project.name}" class="project-image">
+                <div class="project-info">
+                    <h3 class="project-name">${project.name}</h3>
+                    <p class="project-description">${description}</p>
+                    <a href="${project.url}" target="_blank" class="project-link">View Project</a>
                 </div>
-                <div class="project-link-wrapper">
-                    <a href="${project.link}" class="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
-                </div>
-            </div>
-        `;
-        
-        projectsGrid.appendChild(projectCard);
-    });
+            `;
+            
+            projectsContainer.appendChild(projectCard);
+        });
+    }
 }
 
 // Populate certifications section
@@ -226,12 +222,6 @@ function addRevealClasses() {
     
     // Add reveal class to skill categories
     document.querySelectorAll('.skill-category').forEach((item, index) => {
-        item.classList.add('reveal');
-        item.style.transitionDelay = `${index * 0.1}s`;
-    });
-    
-    // Add reveal class to project cards
-    document.querySelectorAll('.project-card').forEach((item, index) => {
         item.classList.add('reveal');
         item.style.transitionDelay = `${index * 0.1}s`;
     });

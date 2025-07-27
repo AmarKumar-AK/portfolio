@@ -28,7 +28,7 @@ const portfolioData = {
             highlights: [
                 "5-year degree program in Computer Engineering",
                 "Developed strong foundation in software development and engineering principles",
-                "Participated in technical projects and coursework relevant to full-stack development"
+                "Studied full-stack development technologies and methodologies"
             ]
         },
         {
@@ -71,7 +71,7 @@ const portfolioData = {
             achievements: [
                 "Developed and maintained web applications using React.js and Redux",
                 "Implemented RESTful APIs using Spring Boot",
-                "Collaborated on agile software development projects"
+                "Collaborated using agile software development methodologies"
             ]
         },
         {
@@ -83,7 +83,7 @@ const portfolioData = {
             description: "Started career at Publicis Sapient as a Trainee Engineer after graduation.",
             achievements: [
                 "Underwent comprehensive training in full-stack development technologies",
-                "Participated in hands-on projects and contributed to production code",
+                "Contributed to production code and gained hands-on experience",
                 "Acquired proficiency in React.js, Redux, and Spring Boot frameworks"
             ]
         },
@@ -127,27 +127,23 @@ const portfolioData = {
     // Projects Section
     projects: [
         {
-            name: "Document Management System",
-            description: "Microservice-based document management system developed at Glabbr Technologies. Implemented APIs for document operations including opening, copying, moving, and deleting files. Microservice-based document management system developed at Glabbr Technologies. Implemented APIs for document operations including opening, copying, moving, and deleting files. Microservice-based document management system developed at Glabbr Technologies. Implemented APIs for document operations including opening, copying, moving, and deleting files.",
-            technologies: ["Java", "Spring Boot", "Microservices", "RESTful APIs"],
-            link: "#",
-            image: "images/project11.jpg" // Add project screenshots to the images folder
+            name: "Personal Portfolio Website",
+            description: "A responsive portfolio website built with HTML, CSS, and JavaScript to showcase skills, projects, and professional experience.",
+            image: "images/project11.jpg",
+            url: "https://github.com/AmarKumar-AK/portfolio"
         },
         {
-            name: "E-commerce Platform",
-            description: "Full-stack e-commerce application with user authentication, product catalog, shopping cart functionality, and payment integration.",
-            technologies: ["React.js", "Redux.js", "Node.js", "MongoDB"],
-            link: "#",
-            image: "images/project2.webp"
+            name: "E-commerce Web Application",
+            description: "Full-stack e-commerce platform with product catalog, shopping cart, and secure payment integration using React and Node.js.",
+            image: "images/project2.webp",
+            url: "https://github.com/AmarKumar-AK/ecommerce-app"
         },
         {
-            name: "Cloud-Based Application",
-            description: "Developed a cloud-native application leveraging AWS services for scalability and reliability.",
-            technologies: ["AWS", "Java", "Spring Boot", "Cloud Services"],
-            link: "#",
-            image: "images/project3.jpeg"
+            name: "Task Management System",
+            description: "A comprehensive task management application with user authentication, task assignment, and progress tracking functionality.",
+            image: "images/project3.jpeg",
+            url: "https://github.com/AmarKumar-AK/task-manager"
         }
-        // Add more project entries as needed
     ],
 
     // Certifications Section
