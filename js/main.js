@@ -69,25 +69,47 @@ function populateEducation() {
 function populateExperience() {
     const experienceContainer = document.getElementById('experience-container');
     
-    portfolioData.experience.forEach(exp => {
-        const experienceItem = document.createElement('div');
-        experienceItem.className = 'experience-item fade-in';
+    portfolioData.experience.forEach(company => {
+        const companyItem = document.createElement('div');
+        companyItem.className = 'company-experience fade-in';
         
-        const achievementsList = exp.achievements.map(achievement => `<li>${achievement}</li>`).join('');
-        
-        experienceItem.innerHTML = `
-            <h3>${exp.position}</h3>
-            <div class="experience-date">${exp.startDate} - ${exp.endDate} | ${exp.location}</div>
-            <p class="experience-company">${exp.company}</p>
-            <p>${exp.description}</p>
-            <div class="experience-achievements">
-                <ul>
-                    ${achievementsList}
-                </ul>
-            </div>
+        // Create company header
+        const companyHeader = document.createElement('div');
+        companyHeader.className = 'company-header';
+        companyHeader.innerHTML = `
+            <h3 class="company-name">${company.company}</h3>
+            <p class="company-location">${company.location}</p>
+            <p class="company-description">${company.companyDescription}</p>
         `;
+        companyItem.appendChild(companyHeader);
         
-        experienceContainer.appendChild(experienceItem);
+        // Create roles container
+        const rolesContainer = document.createElement('div');
+        rolesContainer.className = 'roles-container';
+        
+        // Add each role
+        company.roles.forEach(role => {
+            const roleItem = document.createElement('div');
+            roleItem.className = 'role-item';
+            
+            const achievementsList = role.achievements.map(achievement => `<li>${achievement}</li>`).join('');
+            
+            roleItem.innerHTML = `
+                <h4 class="role-title">${role.position}</h4>
+                <div class="role-date">${role.startDate} - ${role.endDate}</div>
+                <p class="role-description">${role.description}</p>
+                <div class="role-achievements">
+                    <ul>
+                        ${achievementsList}
+                    </ul>
+                </div>
+            `;
+            
+            rolesContainer.appendChild(roleItem);
+        });
+        
+        companyItem.appendChild(rolesContainer);
+        experienceContainer.appendChild(companyItem);
     });
 }
 

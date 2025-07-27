@@ -357,10 +357,88 @@ a:hover {
 }
 
 /* Experience Section */
+.company-experience {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.company-experience:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.company-header {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+.company-name {
+    color: var(--primary-color);
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.company-location {
+    color: var(--text-primary);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.company-description {
+    color: var(--text-primary);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.roles-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.role-item {
+    padding: 1rem;
+    border-left: 3px solid var(--primary-color);
+    background: rgba(0,0,0,0.02);
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.role-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.role-date {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.role-description {
+    margin-bottom: 1rem;
+}
+
+.role-achievements ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.role-achievements li {
+    margin-bottom: 0.5rem;
+}
+
 .experience-company {
     font-weight: bold;
-    color: var(--text-primary); /* Use text-primary instead of dark-color to respect theme */
-    transition: color 0.3s ease; /* Add transition for smooth color change */
+    color: var(--text-primary);
+    transition: color 0.3s ease;
 }
 
 /* Skills Section */
@@ -624,6 +702,18 @@ footer a:hover {
     .skills-container, .cert-pub-grid {
         grid-template-columns: 1fr;
     }
+    
+    .company-experience {
+        padding: 1.5rem;
+    }
+    
+    .company-name {
+        font-size: 1.5rem;
+    }
+    
+    .role-item {
+        padding: 0.8rem;
+    }
 }
 
 /* Animation */
@@ -698,6 +788,15 @@ footer a:hover {
 
 .dark-theme .btn:hover {
     background: var(--secondary-color);
+}
+
+.dark-theme .company-experience {
+    background: var(--card-bg);
+    box-shadow: var(--card-shadow);
+}
+
+.dark-theme .role-item {
+    background: rgba(255,255,255,0.05);
 }
 
 .dark-theme h2:after {
