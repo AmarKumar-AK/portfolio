@@ -26,18 +26,56 @@ function loadPortfolioData() {
   // Load personal info
   // Note: profile-name is now handled by typing animation in animations.js
   document.getElementById('profile-title').textContent = portfolioData.personalInfo.title;
-  document.getElementById('location-text').textContent = portfolioData.personalInfo.location;
+  document.getElementById('profile-bio').textContent = portfolioData.personalInfo.bio;
   document.getElementById('profile-image').src = portfolioData.personalInfo.photo;
-  document.getElementById('email').textContent = portfolioData.personalInfo.email;
-  document.getElementById('email').href = `mailto:${portfolioData.personalInfo.email}`;
-  document.getElementById('phone').textContent = portfolioData.personalInfo.phone;
-  document.getElementById('linkedin').textContent = portfolioData.personalInfo.linkedin;
-  document.getElementById('linkedin').href = `https://${portfolioData.personalInfo.linkedin}`;
+  
+  // Set contact elements if they exist in the DOM
+  // These elements have been removed from home section but might be used elsewhere
+  const emailElement = document.getElementById('email');
+  if (emailElement) {
+    emailElement.textContent = portfolioData.personalInfo.email;
+    emailElement.href = `mailto:${portfolioData.personalInfo.email}`;
+  }
+  
+  const phoneElement = document.getElementById('phone');
+  if (phoneElement) {
+    const phoneLink = document.createElement('a');
+    phoneLink.textContent = portfolioData.personalInfo.phone;
+    phoneLink.href = `tel:${portfolioData.personalInfo.phone}`;
+    phoneElement.innerHTML = ''; // Clear text content
+    phoneElement.appendChild(phoneLink);
+  }
+  
+  const linkedinElement = document.getElementById('linkedin');
+  if (linkedinElement) {
+    linkedinElement.textContent = portfolioData.personalInfo.linkedin;
+    linkedinElement.href = `https://${portfolioData.personalInfo.linkedin}`;
+  }
   
   // Load contact section data
-  document.getElementById('contact-email').textContent = portfolioData.personalInfo.email;
-  document.getElementById('contact-phone').textContent = portfolioData.personalInfo.phone;
-  document.getElementById('contact-linkedin').textContent = portfolioData.personalInfo.linkedin;
+  const contactEmail = document.getElementById('contact-email');
+  if (contactEmail) {
+    contactEmail.textContent = portfolioData.personalInfo.email;
+    contactEmail.parentElement.addEventListener('click', () => {
+      window.location.href = `mailto:${portfolioData.personalInfo.email}`;
+    });
+  }
+  
+  const contactPhone = document.getElementById('contact-phone');
+  if (contactPhone) {
+    contactPhone.textContent = portfolioData.personalInfo.phone;
+    contactPhone.parentElement.addEventListener('click', () => {
+      window.location.href = `tel:${portfolioData.personalInfo.phone}`;
+    });
+  }
+  
+  const contactLinkedin = document.getElementById('contact-linkedin');
+  if (contactLinkedin) {
+    contactLinkedin.textContent = portfolioData.personalInfo.linkedin;
+    contactLinkedin.parentElement.addEventListener('click', () => {
+      window.open(`https://${portfolioData.personalInfo.linkedin}`, '_blank', 'noopener,noreferrer');
+    });
+  }
 
   // Load skills
   const skillsContainer = document.getElementById('skills-list');
@@ -52,7 +90,12 @@ function loadPortfolioData() {
   const certsContainer = document.getElementById('certifications-list');
   portfolioData.certifications.forEach(cert => {
     const certEl = document.createElement('li');
-    certEl.textContent = cert;
+    const certLink = document.createElement('a');
+    certLink.href = cert.link;
+    certLink.textContent = cert.name;
+    certLink.target = "_blank"; // Open in new tab
+    certLink.rel = "noopener noreferrer"; // Security best practice
+    certEl.appendChild(certLink);
     certsContainer.appendChild(certEl);
   });
 
@@ -120,3 +163,5 @@ function loadPortfolioData() {
     eduContainer.appendChild(eduEl);
   });
 }
+
+// Footer has been removed
