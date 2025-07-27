@@ -16,7 +16,7 @@ const portfolioData = {
             { platform: "Twitter", url: "https://x.com/AmarkrArya", icon: "fab fa-twitter" },
             { platform: "Instagram", url: "https://instagram.com/_kumar_amar_", icon: "fab fa-instagram" },
             { platform: "GitHub", url: "https://github.com/AmarKumar-AK", icon: "fab fa-github" },
-            { platform: "Discord", url: "https://discord.com/brainteazers0029", icon: "fab fa-discord" }
+            { platform: "Discord", url: "https://discord.com/brainteasers0029", icon: "fab fa-discord" }
         ]
     },
 
