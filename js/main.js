@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     populateEducation();
     populateExperience();
     populateSkills();
-    populateProjects();
+    // Projects section has been removed
     populateCertifications();
     // Publications section has been removed
     populateLanguages();
@@ -112,38 +112,7 @@ function populateSkills() {
     });
 }
 
-// Populate projects section
-function populateProjects() {
-    const projectsGrid = document.getElementById('projects-grid');
-    
-    portfolioData.projects.forEach(project => {
-        const projectCard = document.createElement('div');
-        projectCard.className = 'project-card fade-in';
-        
-        const techTags = project.technologies.map(tech => `<span class="project-tech-tag">${tech}</span>`).join('');
-        
-        // Truncate description to 150 characters and add ellipsis if needed
-        const truncatedDescription = project.description.length > 150 
-            ? project.description.substring(0, 150) + '...' 
-            : project.description;
-        
-        projectCard.innerHTML = `
-            <img src="${project.image}" alt="${project.name}" class="project-image">
-            <div class="project-content">
-                <h3>${project.name}</h3>
-                <p>${truncatedDescription}</p>
-                <div class="project-technologies">
-                    ${techTags}
-                </div>
-                <div class="project-link-wrapper">
-                    <a href="${project.link}" class="project-link" target="_blank" rel="noopener noreferrer">View Project</a>
-                </div>
-            </div>
-        `;
-        
-        projectsGrid.appendChild(projectCard);
-    });
-}
+// Projects section has been removed
 
 // Populate certifications section
 function populateCertifications() {
@@ -226,12 +195,6 @@ function addRevealClasses() {
     
     // Add reveal class to skill categories
     document.querySelectorAll('.skill-category').forEach((item, index) => {
-        item.classList.add('reveal');
-        item.style.transitionDelay = `${index * 0.1}s`;
-    });
-    
-    // Add reveal class to project cards
-    document.querySelectorAll('.project-card').forEach((item, index) => {
         item.classList.add('reveal');
         item.style.transitionDelay = `${index * 0.1}s`;
     });

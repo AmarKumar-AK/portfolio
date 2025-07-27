@@ -142,9 +142,9 @@ function initThemeToggle() {
     }
 }
 
-// Tilt effect for certifications and project cards
+// Tilt effect for certifications
 function initTiltEffect() {
-    const tiltElements = document.querySelectorAll('.cert-item, .pub-item, .project-card');
+    const tiltElements = document.querySelectorAll('.cert-item, .pub-item');
     
     tiltElements.forEach(element => {
         element.addEventListener('mousemove', e => {

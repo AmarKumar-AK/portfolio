@@ -328,31 +328,7 @@
     transition: width 1.5s ease-out;
 }
 
-/* Project Cards Hover Effects */
-.project-card {
-    perspective: 1000px;
-    transition: transform 0.6s;
-}
-
-.project-card:hover {
-    transform: translateY(-10px) rotateX(5deg);
-}
-
-.project-image {
-    transition: transform 0.5s ease;
-}
-
-.project-card:hover .project-image {
-    transform: scale(1.05);
-}
-
-.project-content {
-    transition: all 0.3s ease;
-}
-
-.project-card:hover .project-content {
-    background: linear-gradient(to bottom, white, #f8f9fa);
-}
+/* Project Cards section removed */
 
 /* Animated Button */
 .btn {
@@ -492,7 +468,6 @@ footer::after {
 .dark-theme .skill-category,
 .dark-theme .education-item,
 .dark-theme .experience-item,
-.dark-theme .project-card,
 .dark-theme .cert-item,
 .dark-theme .pub-item,
 .dark-theme .languages-list,
@@ -501,8 +476,7 @@ footer::after {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-.dark-theme .skill-item,
-.dark-theme .project-tech-tag {
+.dark-theme .skill-item {
     background-color: #3d3d3d;
 }
 
