@@ -12,7 +12,11 @@ const portfolioData = {
         profileImage: "images/Amar_Kumar2.png",
         summary: "Experienced Full Stack Developer at Publicis Sapient, specializing in React.js, Redux.js, and Spring Boot. Skilled in building robust web applications and microservices. AWS Certified Cloud Practitioner with a strong background in software engineering.",
         socialLinks: [
-            { platform: "LinkedIn", url: "https://www.linkedin.com/in/amar-kumar-0b25b0171", icon: "fab fa-linkedin" }
+            { platform: "LinkedIn", url: "https://www.linkedin.com/in/amar-kumar-0b25b0171", icon: "fab fa-linkedin" },
+            { platform: "Twitter", url: "https://x.com/AmarkrArya", icon: "fab fa-twitter" },
+            { platform: "Instagram", url: "https://instagram.com/_kumar_amar_", icon: "fab fa-instagram" },
+            { platform: "GitHub", url: "https://github.com/AmarKumar-AK", icon: "fab fa-github" },
+            { platform: "Discord", url: "https://discord.com/brainteasers0029", icon: "fab fa-discord" }
         ]
     },
 
@@ -50,54 +54,60 @@ const portfolioData = {
     experience: [
         {
             company: "Publicis Sapient",
-            position: "Associate Software development engineer 2",
-            startDate: "May 2024",
-            endDate: "Present",
-            location: "India",
-            description: "Working as an Associate Software Development Engineer 2 at Publicis Sapient, a global digital transformation company.",
-            achievements: [
-                "Developing and maintaining enterprise-level web applications",
-                "Working with modern JavaScript frameworks and backend technologies",
-                "Collaborating with cross-functional teams to deliver high-quality software solutions"
-            ]
-        },
-        {
-            company: "Publicis Sapient",
-            position: "Associate Software Development Engineer 1",
-            startDate: "April 2023",
-            endDate: "April 2024",
-            location: "India",
-            description: "Worked as an Associate Software Development Engineer 1 at Publicis Sapient.",
-            achievements: [
-                "Developed and maintained web applications using React.js and Redux",
-                "Implemented RESTful APIs using Spring Boot",
-                "Collaborated using agile software development methodologies"
-            ]
-        },
-        {
-            company: "Publicis Sapient",
-            position: "Trainee engineer",
-            startDate: "June 2022",
-            endDate: "March 2023",
-            location: "India",
-            description: "Started career at Publicis Sapient as a Trainee Engineer after graduation.",
-            achievements: [
-                "Underwent comprehensive training in full-stack development technologies",
-                "Contributed to production code and gained hands-on experience",
-                "Acquired proficiency in React.js, Redux, and Spring Boot frameworks"
+            location: "Bengaluru, India",
+            companyDescription: "A global digital transformation company focused on creating digital business solutions.",
+            roles: [
+                {
+                    position: "Associate Software Development Engineer 2",
+                    startDate: "May 2024",
+                    endDate: "Present",
+                    description: "Working as an Associate Software Development Engineer 2.",
+                    achievements: [
+                        "Developing and maintaining enterprise-level web applications",
+                        "Working with modern JavaScript frameworks and backend technologies",
+                        "Collaborating with cross-functional teams to deliver high-quality software solutions"
+                    ]
+                },
+                {
+                    position: "Associate Software Development Engineer 1",
+                    startDate: "April 2023",
+                    endDate: "April 2024",
+                    description: "Worked as an Associate Software Development Engineer 1.",
+                    achievements: [
+                        "Developed and maintained web applications using React.js and Redux",
+                        "Implemented RESTful APIs using Spring Boot",
+                        "Collaborated using agile software development methodologies"
+                    ]
+                },
+                {
+                    position: "Trainee Engineer",
+                    startDate: "June 2022",
+                    endDate: "March 2023",
+                    description: "Started career as a Trainee Engineer after graduation.",
+                    achievements: [
+                        "Underwent comprehensive training in full-stack development technologies",
+                        "Contributed to production code and gained hands-on experience",
+                        "Acquired proficiency in React.js, Redux, and Spring Boot frameworks"
+                    ]
+                }
             ]
         },
         {
             company: "Glabbr Technologies Private Limited",
-            position: "Software Engineer",
-            startDate: "June 2021",
-            endDate: "December 2021",
-            location: "Maharashtra, India",
-            description: "Worked on microservice architecture and document management systems.",
-            achievements: [
-                "Developed a Document Management System microservice",
-                "Wrote APIs for document operations including opening, copying, moving, and deleting",
-                "Implemented backend functionalities for document handling and processing"
+            location: "Remote",
+            companyDescription: "A technology company specializing in microservice architecture and document management systems.",
+            roles: [
+                {
+                    position: "Software Engineer",
+                    startDate: "June 2021",
+                    endDate: "December 2021",
+                    description: "Worked on microservice architecture and document management systems.",
+                    achievements: [
+                        "Developed a Document Management System microservice",
+                        "Wrote APIs for document operations including opening, copying, moving, and deleting",
+                        "Implemented backend functionalities for document handling and processing"
+                    ]
+                }
             ]
         }
         // Add more experience entries as needed
@@ -130,18 +140,24 @@ const portfolioData = {
             name: "Personal Portfolio Website",
             description: "A responsive portfolio website built with HTML, CSS, and JavaScript to showcase skills, projects, and professional experience.",
             image: "images/project11.jpg",
-            url: "https://github.com/AmarKumar-AK/portfolio"
+            url: "https://github.com/AmarKumar-AK/portfolio",
+            startDate: "January 2025",
+            endDate: "Present"
         },
         {
             name: "E-commerce Web Application",
-            description: "Full-stack e-commerce platform with product catalog, shopping cart, and secure payment integration using React and Node.js.",
+            description: "Full-stack e-commerce platform with product catalog, shopping cart, and secure payment integration using React and Node.js. ",
             image: "images/project2.webp",
-            url: "https://github.com/AmarKumar-AK/ecommerce-app"
+            url: "https://github.com/AmarKumar-AK/ecommerce-app",
+            startDate: "August 2024",
+            endDate: "December 2024"
         },
         {
             name: "Task Management System",
             description: "A comprehensive task management application with user authentication, task assignment, and progress tracking functionality.",
             image: "images/project3.jpeg",
+            startDate: "March 2024",
+            endDate: "July 2024",
             url: "https://github.com/AmarKumar-AK/task-manager"
         }
     ],
