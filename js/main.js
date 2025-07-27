@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     populateBasicInfo();
     populateEducation();
     populateExperience();
+    populateProjects();
     populateSkills();
-    // Projects section has been removed
     populateCertifications();
     // Publications section has been removed
     populateLanguages();
@@ -112,7 +112,34 @@ function populateSkills() {
     });
 }
 
-// Projects section has been removed
+// Populate projects section
+function populateProjects() {
+    const projectsContainer = document.getElementById('projects-container');
+    
+    if (portfolioData.projects && portfolioData.projects.length > 0) {
+        portfolioData.projects.forEach(project => {
+            const projectCard = document.createElement('div');
+            projectCard.className = 'project-card fade-in';
+            
+            // Truncate description if it's longer than 150 characters
+            let description = project.description;
+            if (description.length > 150) {
+                description = description.substring(0, 150) + '...';
+            }
+            
+            projectCard.innerHTML = `
+                <img src="${project.image}" alt="${project.name}" class="project-image">
+                <div class="project-info">
+                    <h3 class="project-name">${project.name}</h3>
+                    <p class="project-description">${description}</p>
+                    <a href="${project.url}" target="_blank" class="project-link">View Project</a>
+                </div>
+            `;
+            
+            projectsContainer.appendChild(projectCard);
+        });
+    }
+}
 
 // Populate certifications section
 function populateCertifications() {

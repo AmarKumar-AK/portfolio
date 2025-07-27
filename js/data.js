@@ -124,7 +124,27 @@ const portfolioData = {
         // Add more skill categories as needed
     ],
 
-    // Projects Section removed
+    // Projects Section
+    projects: [
+        {
+            name: "Personal Portfolio Website",
+            description: "A responsive portfolio website built with HTML, CSS, and JavaScript to showcase skills, projects, and professional experience.",
+            image: "images/project11.jpg",
+            url: "https://github.com/AmarKumar-AK/portfolio"
+        },
+        {
+            name: "E-commerce Web Application",
+            description: "Full-stack e-commerce platform with product catalog, shopping cart, and secure payment integration using React and Node.js.",
+            image: "images/project2.webp",
+            url: "https://github.com/AmarKumar-AK/ecommerce-app"
+        },
+        {
+            name: "Task Management System",
+            description: "A comprehensive task management application with user authentication, task assignment, and progress tracking functionality.",
+            image: "images/project3.jpeg",
+            url: "https://github.com/AmarKumar-AK/task-manager"
+        }
+    ],
 
     // Certifications Section
     certifications: [
