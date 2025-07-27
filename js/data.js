@@ -14,9 +14,9 @@ const portfolioData = {
         socialLinks: [
             { platform: "LinkedIn", url: "https://www.linkedin.com/in/amar-kumar-0b25b0171", icon: "fab fa-linkedin" },
             { platform: "Twitter", url: "https://x.com/AmarkrArya", icon: "fab fa-twitter" },
-            { platform: "Instagram", url: "https://instagram.com/", icon: "fab fa-instagram" },
+            { platform: "Instagram", url: "https://instagram.com/_kumar_amar_", icon: "fab fa-instagram" },
             { platform: "GitHub", url: "https://github.com/AmarKumar-AK", icon: "fab fa-github" },
-            { platform: "Discord", url: "https://discord.com/", icon: "fab fa-discord" }
+            { platform: "Discord", url: "https://discord.com/brainteazers0029", icon: "fab fa-discord" }
         ]
     },
 
