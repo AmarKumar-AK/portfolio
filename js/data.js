@@ -168,31 +168,31 @@ const portfolioData = {
             name: "Cloud Digital Leader",
             issuer: "Google",
             date: "2023",
-            link: "#"
-        },
-        {
-            name: "ADSE Java Full Stack",
-            issuer: "Publicis Sapient",
-            date: "2022",
-            link: "#"
+            link: "https://www.credential.net/f9b496e0-d60c-4752-bff8-4dc5f4204e72?key=ab7511f66f934274693dfcc8df934e9cd3f5b44003f29afdd6c224f36b616926"
         },
         {
             name: "AWS Certified Cloud Practitioner",
             issuer: "Amazon Web Services",
             date: "2023",
-            link: "#"
+            link: "https://www.credly.com/badges/0a1dc51a-1d08-45ce-9492-13207824c459/linked_in_profile"
+        },
+        {
+            name: "ADSE Java Full Stack",
+            issuer: "Publicis Sapient",
+            date: "2022",
+            link: "https://drive.google.com/file/d/1YNV19wGb45wTvuB2QmTKeHyN7L9JpRQU"
         },
         {
             name: "AWS Cloud Practitioner Essentials",
             issuer: "Amazon Web Services",
             date: "2022",
-            link: "#"
+            link: "https://drive.google.com/file/d/1NtoSpP5-fJ-M9ABQmxir6Q5g1TnTMABX"
         },
         {
             name: "SQL & PostgreSQL for Beginners: Become an SQL Expert",
             issuer: "Udemy",
             date: "2022",
-            link: "#"
+            link: "https://www.udemy.com/certificate/UC-b8c1b1de-c088-4778-adac-f19fd9eb60bf"
         }
         // Add more certification entries as needed
     ],
